@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     "Check your home loan eligibility instantly. Enter your monthly income and existing EMIs to find the maximum home loan amount you can get from Indian banks.",
   keywords: ["home loan eligibility calculator", "home loan eligibility India", "how much home loan can I get", "FOIR calculator"],
-  alternates: { canonical: "https://rupeemath.com/home-loan-eligibility" },
+  alternates: { canonical: "https://www.rupeemath.co.in/home-loan-eligibility" },
   openGraph: {
     title: "Home Loan Eligibility Calculator | RupeeMath",
     description: "Check your maximum home loan eligibility based on income and existing EMIs.",
-    url: "https://rupeemath.com/home-loan-eligibility",
+    url: "https://www.rupeemath.co.in/home-loan-eligibility",
   },
 };
 

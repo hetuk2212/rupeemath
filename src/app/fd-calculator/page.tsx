@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     "Calculate your Fixed Deposit maturity amount online. Enter principal, interest rate, tenure, and compounding frequency to see your FD returns instantly.",
   keywords: ["FD calculator", "fixed deposit calculator", "FD interest calculator India", "FD maturity amount"],
-  alternates: { canonical: "https://rupeemath.com/fd-calculator" },
+  alternates: { canonical: "https://www.rupeemath.co.in/fd-calculator" },
   openGraph: {
     title: "FD Calculator — Fixed Deposit Returns | RupeeMath",
     description: "Free FD calculator for Indian banks. Calculate maturity amount for any compounding frequency.",
-    url: "https://rupeemath.com/fd-calculator",
+    url: "https://www.rupeemath.co.in/fd-calculator",
   },
 };
 

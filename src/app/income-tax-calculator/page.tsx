@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     "Calculate your income tax for FY 2024-25 under both old and new tax regimes. Enter salary and deductions to find which regime saves you more tax.",
   keywords: ["income tax calculator India 2024-25", "old vs new tax regime", "salary tax calculator India", "Section 80C deductions"],
-  alternates: { canonical: "https://rupeemath.com/income-tax-calculator" },
+  alternates: { canonical: "https://www.rupeemath.co.in/income-tax-calculator" },
   openGraph: {
     title: "Income Tax Calculator FY 2024-25 | RupeeMath",
     description: "Compare old and new tax regime. Find which saves you more tax in India.",
-    url: "https://rupeemath.com/income-tax-calculator",
+    url: "https://www.rupeemath.co.in/income-tax-calculator",
   },
 };
 

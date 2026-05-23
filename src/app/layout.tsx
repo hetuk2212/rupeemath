@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rupeemath.com"),
+  metadataBase: new URL("https://www.rupeemath.co.in"),
   title: {
     default: "RupeeMath — Free Financial Calculators",
     template: "%s | RupeeMath",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://rupeemath.com",
+    url: "https://www.rupeemath.co.in",
     siteName: "RupeeMath",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },

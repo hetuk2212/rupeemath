@@ -15,12 +15,12 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://rupeemath.com" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.rupeemath.co.in" },
       ...items.map((item, i) => ({
         "@type": "ListItem",
         position: i + 2,
         name: item.label,
-        ...(item.href ? { item: `https://rupeemath.com${item.href}` } : {}),
+        ...(item.href ? { item: `https://www.rupeemath.co.in${item.href}` } : {}),
       })),
     ],
   };

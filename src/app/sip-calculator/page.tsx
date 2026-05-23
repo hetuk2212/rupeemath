@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     "Use our free SIP calculator to estimate your mutual fund returns. Enter monthly investment, rate of return, and tenure to see your maturity amount with a growth chart.",
   keywords: ["SIP calculator", "SIP calculator India", "mutual fund SIP returns", "systematic investment plan calculator"],
-  alternates: { canonical: "https://rupeemath.com/sip-calculator" },
+  alternates: { canonical: "https://www.rupeemath.co.in/sip-calculator" },
   openGraph: {
     title: "SIP Calculator — Calculate Mutual Fund Returns | RupeeMath",
     description: "Free SIP calculator for Indian investors. Get instant maturity estimates with charts.",
-    url: "https://rupeemath.com/sip-calculator",
+    url: "https://www.rupeemath.co.in/sip-calculator",
   },
 };
 

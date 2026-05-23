@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description:
     "Calculate your monthly loan EMI instantly. Enter loan amount, interest rate, and tenure to see your EMI, total interest, and complete amortization breakdown.",
   keywords: ["EMI calculator", "loan EMI calculator India", "home loan EMI", "car loan EMI calculator"],
-  alternates: { canonical: "https://rupeemath.com/emi-calculator" },
+  alternates: { canonical: "https://www.rupeemath.co.in/emi-calculator" },
   openGraph: {
     title: "EMI Calculator — Calculate Loan EMI | RupeeMath",
     description: "Free EMI calculator for home loan, car loan, and personal loan. Get instant results.",
-    url: "https://rupeemath.com/emi-calculator",
+    url: "https://www.rupeemath.co.in/emi-calculator",
   },
 };
 
