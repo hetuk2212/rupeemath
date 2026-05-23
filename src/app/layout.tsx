@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
+  other: {
+    "google-adsense-account": "ca-pub-5009777619539622",
+  },
 };
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
