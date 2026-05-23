@@ -13,42 +13,27 @@ export function AffiliateCTA({
   subtext,
   ctaLabel,
   ctaHref = "#",
-  variant = "primary",
 }: AffiliateCTAProps) {
-  const isPrimary = variant === "primary";
-
   return (
-    <section
-      className={`mt-8 rounded-2xl p-6 sm:p-8 ${
-        isPrimary
-          ? "bg-gradient-to-r from-primary to-primary-700 text-white"
-          : "border border-primary-200 bg-primary-50 text-gray-900"
-      }`}
-    >
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <section className="mt-8 overflow-hidden rounded-2xl bg-navy-900 p-6 sm:p-8">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h3
-            className={`text-lg font-bold ${isPrimary ? "text-white" : "text-gray-900"}`}
-          >
-            {heading}
-          </h3>
-          <p className={`mt-1 text-sm ${isPrimary ? "text-blue-100" : "text-gray-600"}`}>
-            {subtext}
+          <p className="mb-1 text-xs font-black uppercase tracking-widest text-primary">
+            Sponsored
           </p>
+          <h3 className="text-lg font-bold text-white">{heading}</h3>
+          <p className="mt-1 text-sm text-navy-300">{subtext}</p>
         </div>
         <a
           href={ctaHref}
           rel="nofollow sponsored"
-          className={`inline-flex shrink-0 items-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors ${
-            isPrimary
-              ? "bg-white text-primary hover:bg-blue-50"
-              : "bg-primary text-white hover:bg-primary-600"
-          }`}
+          className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-xl"
         >
           {ctaLabel}
           <ArrowRight className="h-4 w-4" />
         </a>
       </div>
+      <p className="mt-4 text-xs text-navy-600">Powered by Paisabazaar</p>
     </section>
   );
 }

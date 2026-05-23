@@ -1,121 +1,188 @@
 import Link from "next/link";
-import { TrendingUp, CreditCard, Landmark, Calculator, Home } from "lucide-react";
+import { TrendingUp, CreditCard, Landmark, Calculator, Home, ArrowRight } from "lucide-react";
 
 const calculators = [
   {
     title: "SIP Calculator",
-    description: "Calculate how your monthly mutual fund SIP grows into wealth over time.",
+    description: "See how monthly investments compound into crores over 10–30 years. Plan your mutual fund SIP strategy.",
     href: "/sip-calculator",
     icon: TrendingUp,
-    color: "bg-blue-50 text-blue-600",
-    cta: "Calculate SIP Returns",
+    badge: "Most Popular",
+    cta: "Calculate SIP",
   },
   {
     title: "EMI Calculator",
-    description: "Find your exact monthly EMI for home, car, or personal loans.",
+    description: "Find the exact EMI for any home, car or personal loan. See full principal vs interest breakdown.",
     href: "/emi-calculator",
     icon: CreditCard,
-    color: "bg-green-50 text-green-600",
+    badge: null,
     cta: "Calculate EMI",
   },
   {
     title: "FD Calculator",
-    description: "See how much your Fixed Deposit will grow with compound interest.",
+    description: "Calculate Fixed Deposit maturity for any bank across monthly, quarterly and annual compounding.",
     href: "/fd-calculator",
     icon: Landmark,
-    color: "bg-amber-50 text-amber-600",
-    cta: "Calculate FD Returns",
+    badge: null,
+    cta: "Calculate FD",
   },
   {
     title: "Income Tax Calculator",
-    description: "Compare old vs new tax regime and find which saves you more tax.",
+    description: "Compare old vs new tax regime for FY 2024-25 and find which saves you more money instantly.",
     href: "/income-tax-calculator",
     icon: Calculator,
-    color: "bg-purple-50 text-purple-600",
+    badge: "FY 2024-25",
     cta: "Calculate Tax",
   },
   {
     title: "Home Loan Eligibility",
-    description: "Check the maximum home loan amount you're eligible for based on salary.",
+    description: "Check the maximum home loan Indian banks will approve based on your salary and existing EMIs.",
     href: "/home-loan-eligibility",
     icon: Home,
-    color: "bg-rose-50 text-rose-600",
+    badge: null,
     cta: "Check Eligibility",
   },
+];
+
+const stats = [
+  { value: "5", label: "Calculators" },
+  { value: "100%", label: "Free Forever" },
+  { value: "0", label: "Signup Needed" },
+  { value: "⚡", label: "Instant Results" },
 ];
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-50 via-white to-blue-50 px-4 py-16 text-center">
-        <div className="mx-auto max-w-2xl">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-1.5 text-sm font-medium text-primary">
-            <TrendingUp className="h-4 w-4" />
-            Free Financial Calculators for India
-          </div>
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Smart financial decisions <br />
-            <span className="text-primary">start here</span>
+      {/* Hero — Dark Navy */}
+      <section className="relative overflow-hidden bg-navy-900 px-4 py-20">
+        {/* Subtle dot grid */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+        {/* Saffron ambient glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary opacity-[0.07] blur-3xl"
+        />
+
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="mb-5 text-7xl font-black leading-none text-primary opacity-90">₹</div>
+
+          <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+            India&apos;s Smartest{" "}
+            <span className="text-primary">Financial</span>
+            <br />
+            Calculator
           </h1>
-          <p className="mt-4 text-lg text-gray-500">
-            Instant, accurate calculators for SIP, EMI, FD, Income Tax, and Home Loan.
-            No sign-up. No ad popups. Just results.
+          <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-navy-300">
+            Free tools trusted by 10,000+ Indians for EMI, SIP, Tax &amp; more.
+            No sign‑up. No ads. Just instant results.
           </p>
+
           <Link
             href="/sip-calculator"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-primary-600"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-xl"
           >
             Start Calculating
-            <TrendingUp className="h-5 w-5" />
+            <ArrowRight className="h-5 w-5" />
           </Link>
+
+          {/* Stats pills */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className="flex items-center gap-2 rounded-full border border-navy-700 bg-navy-800 px-4 py-1.5"
+              >
+                <span className="text-sm font-black text-primary">{s.value}</span>
+                <span className="text-sm text-navy-300">{s.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Calculator Grid */}
-      <section className="mx-auto w-full max-w-6xl px-4 py-16">
-        <h2 className="mb-2 text-center text-2xl font-bold text-gray-900">All Calculators</h2>
-        <p className="mb-10 text-center text-gray-500">
-          All calculations are instant and done in your browser — no server, no data sent.
-        </p>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Calculator List — Horizontal Cards */}
+      <section className="mx-auto w-full max-w-4xl px-4 py-16">
+        <div className="mb-10 text-center">
+          <h2 className="text-2xl font-black text-gray-900 sm:text-3xl">
+            All <span className="text-primary">Calculators</span>
+          </h2>
+          <p className="mt-2 text-gray-500">
+            All calculations run entirely in your browser — zero data sent to any server.
+          </p>
+        </div>
+
+        <div className="space-y-4">
           {calculators.map((calc) => {
             const Icon = calc.icon;
             return (
               <Link
                 key={calc.href}
                 href={calc.href}
-                className="group flex flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="group flex items-center gap-5 rounded-2xl border border-l-4 border-orange-100 border-l-primary bg-white p-5 shadow-sm transition-all hover:shadow-md"
               >
-                <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl ${calc.color}`}>
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary transition-all duration-200 group-hover:bg-primary group-hover:text-white">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-primary">
-                  {calc.title}
-                </h3>
-                <p className="mt-2 flex-1 text-sm text-gray-500">{calc.description}</p>
-                <div className="mt-4 flex items-center text-sm font-medium text-primary">
-                  {calc.cta} →
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-base font-bold text-gray-900 group-hover:text-primary">
+                      {calc.title}
+                    </h3>
+                    {calc.badge && (
+                      <span className="rounded-full bg-primary-50 px-2 py-0.5 text-xs font-bold text-primary">
+                        {calc.badge}
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-0.5 text-sm text-gray-500">{calc.description}</p>
                 </div>
+                <div className="hidden shrink-0 items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white transition-all group-hover:bg-primary-600 sm:flex">
+                  {calc.cta}
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+                <ArrowRight className="h-5 w-5 shrink-0 text-primary sm:hidden" />
               </Link>
             );
           })}
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="border-t border-border bg-gray-50 px-4 py-12">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-xl font-bold text-gray-800">Why RupeeMath?</h2>
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+      {/* Trust Section — Dark Navy */}
+      <section className="bg-navy-900 px-4 py-14">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-8 text-center text-xl font-black text-white">
+            Why <span className="text-primary">RupeeMath</span>?
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {[
-              { title: "100% Free", desc: "No sign-up, no subscription, no hidden charges." },
-              { title: "Instant Results", desc: "All calculations happen in real-time as you type." },
-              { title: "India-Specific", desc: "Built for Indian tax laws, banks, and investors." },
+              {
+                icon: "🔒",
+                title: "100% Private",
+                desc: "All calculations happen in your browser. We never see your financial data.",
+              },
+              {
+                icon: "⚡",
+                title: "Instant Results",
+                desc: "Live updates as you move the slider — no button to press, no waiting.",
+              },
+              {
+                icon: "🇮🇳",
+                title: "India-First",
+                desc: "Correct FY 2024-25 tax slabs, FOIR norms, and Indian compounding standards.",
+              },
             ].map((item) => (
-              <div key={item.title} className="rounded-xl border border-border bg-white p-5 shadow-sm">
-                <p className="font-semibold text-gray-900">{item.title}</p>
-                <p className="mt-1 text-sm text-gray-500">{item.desc}</p>
+              <div key={item.title} className="rounded-2xl bg-navy-800 p-5">
+                <div className="mb-3 text-2xl">{item.icon}</div>
+                <p className="font-bold text-white">{item.title}</p>
+                <p className="mt-1 text-sm text-navy-300">{item.desc}</p>
               </div>
             ))}
           </div>

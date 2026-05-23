@@ -3,12 +3,14 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { NavigationProgress } from "@/components/shared/NavigationProgress";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -39,7 +41,8 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="flex min-h-full flex-col bg-white antialiased">
+      <body className="flex min-h-full flex-col bg-background antialiased">
+        <NavigationProgress />
         {GA_ID && (
           <>
             <Script

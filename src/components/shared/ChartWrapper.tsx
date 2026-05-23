@@ -16,7 +16,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const DEFAULT_COLORS = ["#1a56db", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"];
+const DEFAULT_COLORS = ["#FF6B35", "#0D1B2A", "#FFD700", "#10b981", "#ef4444"];
 
 interface ChartWrapperProps {
   type: "area" | "bar" | "pie" | "grouped-bar";
@@ -87,12 +87,12 @@ export function ChartWrapper({
             <defs>
               {yKeys.map((key, i) => (
                 <linearGradient key={key} id={`grad-${key}`} x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor={colors[i % colors.length]} stopOpacity={0.2} />
+                  <stop offset="5%" stopColor={colors[i % colors.length]} stopOpacity={0.25} />
                   <stop offset="95%" stopColor={colors[i % colors.length]} stopOpacity={0} />
                 </linearGradient>
               ))}
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#f5f0eb" />
             <XAxis dataKey={xKey} tick={{ fontSize: 12 }} />
             <YAxis tickFormatter={fmt} tick={{ fontSize: 11 }} width={60} />
             <Tooltip formatter={(v) => fmt(v as number)} />
@@ -105,7 +105,7 @@ export function ChartWrapper({
                 name={labels?.[i] ?? key}
                 stroke={colors[i % colors.length]}
                 fill={`url(#grad-${key})`}
-                strokeWidth={2}
+                strokeWidth={2.5}
               />
             ))}
           </AreaChart>
@@ -119,7 +119,7 @@ export function ChartWrapper({
       <div style={{ height }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#f5f0eb" />
             <XAxis dataKey={xKey} tick={{ fontSize: 12 }} />
             <YAxis tickFormatter={fmt} tick={{ fontSize: 11 }} width={60} />
             <Tooltip formatter={(v) => fmt(v as number)} />
@@ -139,12 +139,11 @@ export function ChartWrapper({
     );
   }
 
-  // Default: bar
   return (
     <div style={{ height }}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#f5f0eb" />
           <XAxis dataKey={xKey} tick={{ fontSize: 12 }} />
           <YAxis tickFormatter={fmt} tick={{ fontSize: 11 }} width={60} />
           <Tooltip formatter={(v) => fmt(v as number)} />

@@ -12,33 +12,33 @@ export function ResultCard({ label, value, subLabel, highlight, size = "md" }: R
   return (
     <div
       className={cn(
-        "rounded-xl border p-4 text-center",
+        "rounded-2xl p-5 text-center",
         highlight
-          ? "border-primary-200 bg-primary text-white"
-          : "border-border bg-white text-gray-900"
+          ? "bg-navy-900 shadow-xl"
+          : "border border-orange-100 bg-white shadow-sm"
       )}
     >
       <p
         className={cn(
-          "font-bold leading-tight",
-          size === "lg" && "text-3xl",
+          "font-black leading-none tracking-tight",
+          size === "lg" && "text-4xl",
           size === "md" && "text-2xl",
           size === "sm" && "text-xl",
-          highlight ? "text-white" : "text-primary"
+          highlight ? "text-gold-500" : "text-primary"
         )}
       >
         {value}
       </p>
       <p
         className={cn(
-          "mt-1 text-sm font-medium",
-          highlight ? "text-blue-100" : "text-gray-500"
+          "mt-2 text-xs font-bold uppercase tracking-wider",
+          highlight ? "text-navy-300" : "text-gray-500"
         )}
       >
         {label}
       </p>
       {subLabel && (
-        <p className={cn("mt-0.5 text-xs", highlight ? "text-blue-200" : "text-gray-400")}>
+        <p className={cn("mt-1 text-xs", highlight ? "text-navy-400" : "text-gray-400")}>
           {subLabel}
         </p>
       )}

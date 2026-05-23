@@ -29,12 +29,12 @@ export function SliderInput({
   const display = formatDisplay ? formatDisplay(value) : value.toString();
 
   return (
-    <div className="space-y-2">
-      <div className="flex items-center justify-between">
-        <label className="text-sm font-medium text-gray-700">{label}</label>
-        <div className="flex items-center gap-1 rounded-md border border-border bg-white px-2 py-1">
+    <div className="space-y-2.5">
+      <div className="flex items-center justify-between gap-2">
+        <label className="text-sm font-semibold text-gray-700">{label}</label>
+        <div className="flex items-center gap-1 rounded-lg border border-orange-200 bg-orange-50/60 px-3 py-1.5">
           {unitPosition === "prefix" && unit && (
-            <span className="text-sm text-gray-500">{unit}</span>
+            <span className="text-sm font-bold text-primary">{unit}</span>
           )}
           <input
             type="number"
@@ -51,10 +51,10 @@ export function SliderInput({
               if (isNaN(num)) onChange(min);
               else onChange(clampValue(num, min, max));
             }}
-            className="w-24 text-right text-sm font-semibold text-gray-900 focus:outline-none"
+            className="w-24 bg-transparent text-right text-sm font-bold text-gray-900 focus:outline-none"
           />
           {unitPosition === "suffix" && unit && (
-            <span className="text-sm text-gray-500">{unit}</span>
+            <span className="text-sm font-semibold text-gray-500">{unit}</span>
           )}
         </div>
       </div>
@@ -71,7 +71,7 @@ export function SliderInput({
           {min.toLocaleString("en-IN")}
           {unitPosition === "suffix" ? unit : ""}
         </span>
-        <span className="font-medium text-primary">{display}</span>
+        <span className="font-bold text-primary">{display}</span>
         <span>
           {unitPosition === "prefix" ? unit : ""}
           {max.toLocaleString("en-IN")}

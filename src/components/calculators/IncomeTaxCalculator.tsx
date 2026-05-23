@@ -2,11 +2,10 @@
 
 import { useState, useMemo } from "react";
 import { SliderInput } from "@/components/shared/SliderInput";
-import { ResultCard } from "@/components/shared/ResultCard";
 import { SummaryCard } from "@/components/shared/SummaryCard";
 import { ChartWrapper } from "@/components/shared/ChartWrapper";
 import { calculateIncomeTax } from "@/lib/calculators/income-tax";
-import { formatLakhs, formatCurrency } from "@/lib/utils";
+import { formatLakhs, formatCurrency, cn } from "@/lib/utils";
 
 export function IncomeTaxCalculator() {
   const [gross, setGross] = useState(1200000);
@@ -48,40 +47,66 @@ export function IncomeTaxCalculator() {
   const better = result.betterRegime;
 
   return (
-    <div className="space-y-8">
-      <div className="grid gap-8 lg:grid-cols-2">
-        <div className="space-y-6 rounded-2xl border border-border bg-white p-6 shadow-sm">
-          <h2 className="text-base font-semibold text-gray-800">Income Details (FY 2024-25)</h2>
+    <div className="space-y-6 pb-20 md:pb-0">
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Inputs */}
+        <div className="space-y-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-orange-100">
+          <h2 className="text-xs font-black uppercase tracking-widest text-gray-400">
+            Income Details (FY 2024-25)
+          </h2>
           <SliderInput label="Gross Annual Salary" value={gross} min={300000} max={10000000} step={50000} unit="₹" unitPosition="prefix" onChange={setGross} formatDisplay={formatLakhs} />
           <SliderInput label="HRA Received" value={hra} min={0} max={1500000} step={10000} unit="₹" unitPosition="prefix" onChange={setHra} formatDisplay={formatLakhs} />
           <SliderInput label="LTA" value={lta} min={0} max={200000} step={5000} unit="₹" unitPosition="prefix" onChange={setLta} formatDisplay={formatLakhs} />
-          <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">Deductions (Old Regime)</p>
+          <p className="text-xs font-black uppercase tracking-widest text-gray-400">
+            Deductions (Old Regime Only)
+          </p>
           <SliderInput label="Section 80C (max ₹1.5L)" value={s80c} min={0} max={150000} step={5000} unit="₹" unitPosition="prefix" onChange={setS80c} formatDisplay={formatLakhs} />
           <SliderInput label="Section 80D (Health Insurance)" value={s80d} min={0} max={100000} step={2500} unit="₹" unitPosition="prefix" onChange={setS80d} formatDisplay={formatLakhs} />
           <SliderInput label="Home Loan Interest (24b)" value={homeLoan} min={0} max={200000} step={10000} unit="₹" unitPosition="prefix" onChange={setHomeLoan} formatDisplay={formatLakhs} />
           <SliderInput label="NPS 80CCD (max ₹50K)" value={nps} min={0} max={50000} step={5000} unit="₹" unitPosition="prefix" onChange={setNps} formatDisplay={formatLakhs} />
         </div>
 
+        {/* Results */}
         <div className="space-y-4">
-          <div className={`rounded-xl border-2 p-4 text-center ${better === "new" ? "border-green-400 bg-green-50" : "border-primary bg-primary-50"}`}>
-            <p className="text-sm font-semibold text-gray-600">Better Regime for You</p>
-            <p className={`text-2xl font-bold ${better === "new" ? "text-green-700" : "text-primary"}`}>
+          {/* Better regime hero card */}
+          <div className="rounded-2xl bg-navy-900 p-6 shadow-xl">
+            <p className="mb-2 text-xs font-black uppercase tracking-widest text-navy-500">
+              Better Regime for You
+            </p>
+            <p
+              className={cn(
+                "text-5xl font-black tracking-tight",
+                better === "new" ? "text-emerald-400" : "text-gold-500"
+              )}
+            >
               {better === "new" ? "New Regime" : "Old Regime"}
             </p>
-            <p className="mt-1 text-sm text-gray-500">Saves {formatLakhs(result.savings)} in tax</p>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-xl border border-border bg-white p-4 text-center">
-              <p className="text-xs font-medium uppercase tracking-wide text-gray-500">Old Regime Tax</p>
-              <p className="mt-1 text-xl font-bold text-gray-900">{formatLakhs(result.oldRegime.totalTax)}</p>
-              <p className="text-xs text-gray-400">₹{formatCurrency(result.oldRegime.inHandMonthly)}/mo in-hand</p>
+            <p className="mt-1.5 text-sm text-navy-300">
+              Saves {formatLakhs(result.savings)} in tax per year
+            </p>
+
+            <div className="mt-5 grid grid-cols-2 gap-2">
+              <div className="rounded-xl bg-navy-800 px-3 py-3 text-center">
+                <p className="text-xs font-bold text-navy-400">Old Regime Tax</p>
+                <p className="mt-0.5 text-lg font-black text-red-400">
+                  {formatLakhs(result.oldRegime.totalTax)}
+                </p>
+                <p className="text-xs text-navy-500">
+                  ₹{formatCurrency(result.oldRegime.inHandMonthly)}/mo
+                </p>
+              </div>
+              <div className="rounded-xl bg-navy-800 px-3 py-3 text-center">
+                <p className="text-xs font-bold text-navy-400">New Regime Tax</p>
+                <p className="mt-0.5 text-lg font-black text-emerald-400">
+                  {formatLakhs(result.newRegime.totalTax)}
+                </p>
+                <p className="text-xs text-navy-500">
+                  ₹{formatCurrency(result.newRegime.inHandMonthly)}/mo
+                </p>
+              </div>
             </div>
-            <div className="rounded-xl border border-border bg-white p-4 text-center">
-              <p className="text-xs font-medium uppercase tracking-wide text-gray-500">New Regime Tax</p>
-              <p className="mt-1 text-xl font-bold text-gray-900">{formatLakhs(result.newRegime.totalTax)}</p>
-              <p className="text-xs text-gray-400">₹{formatCurrency(result.newRegime.inHandMonthly)}/mo in-hand</p>
-            </div>
           </div>
+
           <SummaryCard
             title="Old Regime Breakdown"
             items={[
@@ -103,8 +128,10 @@ export function IncomeTaxCalculator() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
-        <h3 className="mb-4 text-sm font-semibold text-gray-700">Old vs New Regime Comparison</h3>
+      <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-orange-100">
+        <h3 className="mb-4 text-xs font-black uppercase tracking-widest text-gray-400">
+          Old vs New Regime Comparison
+        </h3>
         <ChartWrapper
           type="grouped-bar"
           data={chartData}
@@ -112,6 +139,25 @@ export function IncomeTaxCalculator() {
           colors={["#ef4444", "#10b981"]}
           height={280}
         />
+      </div>
+
+      {/* Mobile sticky bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-between border-t border-navy-800 bg-navy-900/95 px-4 py-3 backdrop-blur-sm md:hidden">
+        <div>
+          <p className="text-xs font-bold text-navy-400">Best Regime</p>
+          <p
+            className={cn(
+              "text-xl font-black",
+              better === "new" ? "text-emerald-400" : "text-gold-500"
+            )}
+          >
+            {better === "new" ? "New Regime" : "Old Regime"}
+          </p>
+        </div>
+        <div className="text-right">
+          <p className="text-xs text-navy-400">You save</p>
+          <p className="text-base font-black text-primary">{formatLakhs(result.savings)}</p>
+        </div>
       </div>
     </div>
   );

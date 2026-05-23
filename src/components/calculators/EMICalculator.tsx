@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { SliderInput } from "@/components/shared/SliderInput";
-import { ResultCard } from "@/components/shared/ResultCard";
+import { ResultDisplay } from "@/components/shared/ResultDisplay";
 import { SummaryCard } from "@/components/shared/SummaryCard";
 import { ChartWrapper } from "@/components/shared/ChartWrapper";
 import { calculateEMI } from "@/lib/calculators/emi";
@@ -13,17 +13,21 @@ export function EMICalculator() {
   const [rate, setRate] = useState(8.5);
   const [months, setMonths] = useState(240);
 
-  const result = useMemo(() => calculateEMI({ loanAmount: loan, annualRate: rate, tenureMonths: months }), [loan, rate, months]);
+  const result = useMemo(
+    () => calculateEMI({ loanAmount: loan, annualRate: rate, tenureMonths: months }),
+    [loan, rate, months]
+  );
 
-  const pieData = [
-    { principal: result.principalPercent, interest: result.interestPercent },
-  ];
+  const pieData = [{ principal: result.principalPercent, interest: result.interestPercent }];
 
   return (
-    <div className="space-y-8">
-      <div className="grid gap-8 lg:grid-cols-2">
-        <div className="space-y-6 rounded-2xl border border-border bg-white p-6 shadow-sm">
-          <h2 className="text-base font-semibold text-gray-800">Loan Details</h2>
+    <div className="space-y-6 pb-20 md:pb-0">
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Inputs */}
+        <div className="space-y-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-orange-100">
+          <h2 className="text-xs font-black uppercase tracking-widest text-gray-400">
+            Loan Details
+          </h2>
           <SliderInput
             label="Loan Amount"
             value={loan}
@@ -59,19 +63,20 @@ export function EMICalculator() {
           />
         </div>
 
+        {/* Results */}
         <div className="space-y-4">
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-            <ResultCard
-              label="Monthly EMI"
-              value={formatLakhs(result.emi)}
-              highlight
-              size="lg"
-            />
-            <ResultCard label="Total Interest" value={formatLakhs(result.totalInterest)} size="md" />
-            <ResultCard label="Total Payment" value={formatLakhs(result.totalPayable)} size="md" />
-          </div>
+          <ResultDisplay
+            label="Monthly EMI"
+            value={formatLakhs(result.emi)}
+            sublabel={`Total payable: ${formatLakhs(result.totalPayable)}`}
+            pills={[
+              { label: "Total Interest", value: formatLakhs(result.totalInterest), color: "red" },
+              { label: "Total Payment", value: formatLakhs(result.totalPayable), color: "white" },
+              { label: "Interest %", value: formatPercent(result.interestPercent), color: "red" },
+            ]}
+            stickyLabel="Monthly EMI"
+          />
           <SummaryCard
-            title="Loan Breakdown"
             items={[
               { label: "Principal Amount", value: formatLakhs(loan), color: "blue" },
               { label: "Total Interest", value: formatLakhs(result.totalInterest), color: "red" },
@@ -82,13 +87,15 @@ export function EMICalculator() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
-        <h3 className="mb-4 text-sm font-semibold text-gray-700">Principal vs Interest Split</h3>
+      <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-orange-100">
+        <h3 className="mb-4 text-xs font-black uppercase tracking-widest text-gray-400">
+          Principal vs Interest Split
+        </h3>
         <ChartWrapper
           type="pie"
           data={pieData}
           dataKeys={{ y: ["principal", "interest"] }}
-          colors={["#1a56db", "#ef4444"]}
+          colors={["#FF6B35", "#0D1B2A"]}
           height={280}
           labels={["Principal", "Interest"]}
           formatter={(v) => `${v.toFixed(1)}%`}

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { SliderInput } from "@/components/shared/SliderInput";
-import { ResultCard } from "@/components/shared/ResultCard";
+import { ResultDisplay } from "@/components/shared/ResultDisplay";
 import { SummaryCard } from "@/components/shared/SummaryCard";
 import { ChartWrapper } from "@/components/shared/ChartWrapper";
 import { calculateFD, type CompoundFrequency } from "@/lib/calculators/fd";
@@ -32,10 +32,11 @@ export function FDCalculator() {
   }));
 
   return (
-    <div className="space-y-8">
-      <div className="grid gap-8 lg:grid-cols-2">
-        <div className="space-y-6 rounded-2xl border border-border bg-white p-6 shadow-sm">
-          <h2 className="text-base font-semibold text-gray-800">FD Details</h2>
+    <div className="space-y-6 pb-20 md:pb-0">
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Inputs */}
+        <div className="space-y-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-orange-100">
+          <h2 className="text-xs font-black uppercase tracking-widest text-gray-400">FD Details</h2>
           <SliderInput
             label="Principal Amount"
             value={principal}
@@ -70,16 +71,16 @@ export function FDCalculator() {
             formatDisplay={(v) => `${v} yrs`}
           />
           <div className="space-y-2">
-            <p className="text-sm font-medium text-gray-700">Compounding Frequency</p>
+            <p className="text-sm font-semibold text-gray-700">Compounding Frequency</p>
             <div className="flex flex-wrap gap-2">
               {frequencies.map((f) => (
                 <button
                   key={f.value}
                   onClick={() => setFrequency(f.value)}
-                  className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${
+                  className={`rounded-full px-3 py-1.5 text-sm font-semibold transition-all ${
                     frequency === f.value
-                      ? "bg-primary text-white"
-                      : "border border-border bg-white text-gray-600 hover:border-primary hover:text-primary"
+                      ? "bg-primary text-white shadow-sm"
+                      : "border border-orange-200 bg-white text-gray-600 hover:border-primary hover:text-primary"
                   }`}
                 >
                   {f.label}
@@ -89,23 +90,20 @@ export function FDCalculator() {
           </div>
         </div>
 
+        {/* Results */}
         <div className="space-y-4">
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-            <ResultCard
-              label="Maturity Amount"
-              value={formatLakhs(result.maturityAmount)}
-              highlight
-              size="lg"
-            />
-            <ResultCard label="Total Interest" value={formatLakhs(result.totalInterest)} size="md" />
-            <ResultCard
-              label="Effective Rate"
-              value={formatPercent(result.effectiveAnnualRate)}
-              size="md"
-            />
-          </div>
+          <ResultDisplay
+            label="Maturity Amount"
+            value={formatLakhs(result.maturityAmount)}
+            sublabel={`Effective rate: ${formatPercent(result.effectiveAnnualRate)} p.a.`}
+            pills={[
+              { label: "Principal", value: formatLakhs(principal), color: "white" },
+              { label: "Interest Earned", value: formatLakhs(result.totalInterest), color: "green" },
+              { label: "Effective Rate", value: formatPercent(result.effectiveAnnualRate), color: "saffron" },
+            ]}
+            stickyLabel="Maturity Amount"
+          />
           <SummaryCard
-            title="FD Summary"
             items={[
               { label: "Principal", value: formatLakhs(principal), color: "blue" },
               { label: "Interest Earned", value: formatLakhs(result.totalInterest), color: "green" },
@@ -116,13 +114,15 @@ export function FDCalculator() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
-        <h3 className="mb-4 text-sm font-semibold text-gray-700">FD Growth Over Time</h3>
+      <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-orange-100">
+        <h3 className="mb-4 text-xs font-black uppercase tracking-widest text-gray-400">
+          FD Growth Over Time
+        </h3>
         <ChartWrapper
           type="area"
           data={chartData}
           dataKeys={{ x: "year", y: ["balance"] }}
-          colors={["#1a56db"]}
+          colors={["#FF6B35"]}
           height={280}
           labels={["FD Value"]}
         />
