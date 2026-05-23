@@ -26,10 +26,22 @@ export function Footer() {
                 ["Home Loan Eligibility", "/home-loan-eligibility"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-sm text-gray-500 hover:text-primary"
-                  >
+                  <Link href={href} className="text-sm text-gray-500 hover:text-primary">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="mb-2 text-sm font-semibold text-gray-700">Company</p>
+            <ul className="space-y-1">
+              {[
+                ["About", "/about"],
+                ["Privacy Policy", "/privacy-policy"],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link href={href} className="text-sm text-gray-500 hover:text-primary">
                     {label}
                   </Link>
                 </li>
