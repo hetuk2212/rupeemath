@@ -19,29 +19,29 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "How is home loan eligibility calculated?",
+    question: "How can I increase my home loan eligibility?",
     answer:
-      "Banks use the FOIR (Fixed Obligation to Income Ratio) method. They typically allow up to 50% of your net monthly income toward all EMIs combined. Subtract your existing EMIs to find the maximum new EMI, then reverse-calculate the loan amount.",
+      "Several steps can boost your eligibility: (1) Pay off existing loans to reduce your FOIR, (2) Add a co-applicant (spouse or parent) to combine incomes, (3) Improve your CIBIL score above 750 by clearing dues and avoiding defaults, (4) Opt for a longer tenure (up to 30 years) to lower the required monthly EMI, (5) Declare all income sources — rental income, freelance income — if they can be documented.",
   },
   {
-    question: "What is FOIR in home loans?",
+    question: "Does my age affect home loan eligibility?",
     answer:
-      "FOIR stands for Fixed Obligation to Income Ratio. It's the percentage of your income committed to loan EMIs. Most banks cap FOIR at 40–50%. A lower FOIR means you're eligible for a larger loan.",
+      "Yes. Banks typically offer home loans up to the age of 60–65 (retirement age). A younger applicant can get a longer tenure (25–30 years), which means a lower EMI and higher loan eligibility. An older applicant may only get a 10–15 year tenure, resulting in a higher monthly EMI and thus lower loan eligibility for the same income.",
   },
   {
-    question: "What salary is required for a ₹50 lakh home loan?",
+    question: "What is the minimum CIBIL score required for a home loan?",
     answer:
-      "At 8.5% interest for 20 years, a ₹50 lakh loan requires an EMI of approximately ₹43,391/month. With 50% FOIR and no existing EMIs, you'd need a monthly income of at least ₹86,782. More income is needed if you have other loans.",
+      "Most banks and NBFCs require a minimum CIBIL score of 650–700 to approve a home loan. A score of 750 or above is considered excellent and often results in faster approval, a lower interest rate, and better loan terms. You can check your CIBIL score for free once a year from the CIBIL website.",
   },
   {
-    question: "Does CIBIL score affect home loan eligibility?",
+    question: "Are self-employed individuals eligible for home loans?",
     answer:
-      "Yes. A CIBIL score above 750 is considered good and often results in faster approval and lower interest rates. Scores below 650 may lead to rejection or higher rates. Income alone doesn't guarantee eligibility.",
+      "Yes, self-employed individuals (business owners and professionals) are eligible for home loans. However, the documentation is more extensive: typically 2–3 years of ITR filings, audited P&L statements, bank statements, and business continuity proof are required. Income proof variability means banks may offer slightly lower loan amounts compared to salaried applicants with the same income.",
   },
   {
-    question: "Can both spouses apply for a home loan together?",
+    question: "What is the maximum tenure for a home loan in India?",
     answer:
-      "Yes, joint home loans are common and beneficial. The combined income of both applicants increases eligibility. Both can claim separate tax deductions on the loan — up to ₹1.5 lakh under 80C and ₹2 lakh under Section 24(b) each.",
+      "Most banks in India offer home loan tenures up to 30 years. The maximum tenure is usually limited by your age at loan maturity — typically, banks require the loan to be repaid by age 60 (salaried) or 65 (self-employed). A longer tenure reduces your EMI burden but increases the total interest paid significantly.",
   },
 ];
 
@@ -63,6 +63,78 @@ export default function HomeLoanPage() {
         ctaLabel="Check Home Loan Offers →"
         ctaHref="#"
       />
+
+      {/* SEO Content Sections */}
+      <div className="mt-10 space-y-6">
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">What is Home Loan Eligibility?</h2>
+          <p className="text-sm leading-relaxed text-gray-600">
+            Home loan eligibility is the maximum loan amount a bank or NBFC is willing to lend you
+            based on your income, existing financial obligations, credit history, and age. Indian banks
+            use the <strong>FOIR (Fixed Obligation to Income Ratio)</strong> method as the primary
+            criterion: they limit total EMI outgo (including the proposed home loan EMI) to
+            <strong> 40–50% of your net monthly income</strong>. A bank first determines your maximum
+            allowable EMI, subtracts your existing EMIs, and then calculates the loan amount for which
+            the remaining EMI capacity is sufficient. This tool uses the standard 50% FOIR and 8.5%
+            interest rate (adjustable) to give you an indicative figure. Actual eligibility will also
+            depend on your <strong>CIBIL score</strong>, employment type, age, and the specific bank&apos;s
+            internal credit policies.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">How to Use the RupeeMath Home Loan Eligibility Calculator</h2>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">1.</span>
+              <span><strong>Monthly Income:</strong> Enter your net take-home salary (after tax and PF deductions). For joint applications, enter the combined income of all applicants.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">2.</span>
+              <span><strong>Existing EMIs:</strong> Enter the total of all ongoing EMIs — car loan, personal loan, credit card dues, etc. This directly reduces your available EMI capacity.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">3.</span>
+              <span><strong>Interest Rate:</strong> The default is 8.5% (current average). Adjust based on the rate quoted by your bank or lender.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">4.</span>
+              <span><strong>Tenure:</strong> Select your preferred loan tenure (10–30 years). Longer tenures increase eligibility by reducing the required monthly EMI.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">5.</span>
+              <span><strong>View result:</strong> See your Maximum Loan Eligibility in lakhs and the EMI you would pay on that amount. Use this as a benchmark before approaching banks.</span>
+            </li>
+          </ul>
+        </section>
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">Tips to Improve Your Home Loan Eligibility</h2>
+          <ul className="space-y-3 text-sm text-gray-600">
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+              <span><strong>Clear small loans first:</strong> Paying off a personal loan or car loan before applying reduces your existing EMIs, directly boosting the new loan amount you qualify for.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+              <span><strong>Add a co-applicant:</strong> Including your spouse or parent as a co-borrower combines both incomes, often increasing eligibility by 40–80%.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+              <span><strong>Maintain a CIBIL score above 750:</strong> A higher credit score unlocks lower interest rates and improves the bank&apos;s willingness to sanction a larger loan.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+              <span><strong>Choose a longer tenure:</strong> Extending from 15 to 20 years can increase your eligible loan amount by 10–15%, though total interest paid increases significantly.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+              <span><strong>Show all income:</strong> Bonus, rental income, and freelance income — if supported by ITR or bank statements — can be included to increase the assessed income.</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+
       <FAQSection items={faqs} />
     </div>
   );

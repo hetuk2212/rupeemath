@@ -19,29 +19,29 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "Which is better — old or new tax regime in India?",
+    question: "Who should choose the new tax regime in FY 2024-25?",
     answer:
-      "It depends on your deductions. If you have significant Section 80C investments, HRA, and home loan interest, the old regime often works out cheaper. If you have few deductions, the new regime (with lower slab rates) is usually better. Our calculator shows you which saves more.",
+      "The new regime generally benefits taxpayers with limited deductions — typically younger employees, self-employed individuals, or those without a home loan or significant 80C investments. With the enhanced standard deduction of ₹75,000 and zero tax up to ₹7 lakh (87A rebate), the new regime is now the default for most salaried employees.",
   },
   {
-    question: "What is the standard deduction for FY 2024-25?",
+    question: "What deductions are NOT allowed under the new tax regime?",
     answer:
-      "For FY 2024-25 (Budget 2024): Old regime — ₹50,000; New regime — ₹75,000 (increased from ₹50,000 in Budget 2024). This is a flat deduction available to all salaried employees and pensioners.",
+      "The new regime disallows most common deductions: Section 80C (₹1.5L), Section 80D (health insurance), HRA exemption, LTA, home loan interest under Section 24(b), Section 80CCD(1B) for NPS, and most other Chapter VI-A deductions. Only the standard deduction of ₹75,000 and employer's NPS contribution (80CCD(2)) are allowed.",
   },
   {
-    question: "What are the new income tax slabs for FY 2024-25?",
+    question: "What is the surcharge on income tax in India?",
     answer:
-      "New regime slabs: ₹0–3L = nil; ₹3–7L = 5%; ₹7–10L = 10%; ₹10–12L = 15%; ₹12–15L = 20%; above ₹15L = 30%. Plus 4% health and education cess on tax. Rebate u/s 87A applies if income ≤₹7L.",
+      "Surcharge applies on income above ₹50 lakh: 10% surcharge for ₹50L–₹1Cr; 15% for ₹1Cr–₹2Cr; 25% for ₹2Cr–₹5Cr; 37% for above ₹5Cr (capped at 25% under the new regime per Budget 2023). In addition, a 4% Health and Education Cess applies on (tax + surcharge) for all taxpayers.",
   },
   {
-    question: "What is Section 87A rebate?",
+    question: "Can NRIs use this income tax calculator?",
     answer:
-      "Section 87A provides a full tax rebate: in the old regime, no tax if taxable income ≤₹5 lakh; in the new regime, no tax if taxable income ≤₹7 lakh. This means zero tax outgo even if your salary is just at or below these thresholds.",
+      "This calculator is designed for resident Indian salaried individuals. NRIs have different tax rules: global income is not taxed in India, only India-sourced income is taxed, and NRIs cannot claim certain deductions like 80C under some conditions. NRIs should consult a CA or use an NRI-specific tax tool for accurate calculations.",
   },
   {
-    question: "Can I switch between old and new tax regime every year?",
+    question: "How do I save the most tax on a salary of ₹10 lakh?",
     answer:
-      "Salaried employees can switch between regimes every year at the time of filing their ITR. However, those with business income can only switch once. Inform your employer about your preferred regime at the start of the financial year for correct TDS deduction.",
+      "Under the old regime with maximum deductions: Standard deduction ₹50K + 80C ₹1.5L + 80D ₹25K + NPS 80CCD(1B) ₹50K = ₹2.75L in deductions. Taxable income = ₹7.25L. Estimated tax ≈ ₹52,500 + cess. Under the new regime: Standard deduction ₹75K. Taxable income = ₹9.25L. Estimated tax ≈ ₹57,500 + cess. At ₹10L salary, the old regime often saves more if you have these investments — use our calculator to compare your exact situation.",
   },
 ];
 
@@ -63,6 +63,96 @@ export default function IncomeTaxPage() {
         ctaLabel="Explore NPS Plans →"
         ctaHref="#"
       />
+
+      {/* SEO Content Sections */}
+      <div className="mt-10 space-y-6">
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">Old vs New Tax Regime — Which is Better?</h2>
+          <p className="text-sm leading-relaxed text-gray-600">
+            India&apos;s dual income tax regime gives every taxpayer a choice. The <strong>old regime</strong>
+            has higher tax rates but allows a wide range of deductions (80C, HRA, home loan interest,
+            80D, etc.), which can significantly reduce your taxable income. The <strong>new regime
+            (Budget 2024)</strong> offers lower tax rates and a higher standard deduction of ₹75,000,
+            but most deductions are not available. The new regime is now the <strong>default regime</strong>
+            from FY 2024-25 — if you don&apos;t declare a preference, your employer will apply it. The
+            right choice depends entirely on your deductions: heavy investors in 80C, HRA claimants,
+            and home loan borrowers often save more under the old regime, while those with few
+            deductions usually benefit from the new regime&apos;s lower rates.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">How to Use the RupeeMath Income Tax Calculator</h2>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">1.</span>
+              <span><strong>Gross Salary:</strong> Enter your annual CTC or gross salary (before any deductions).</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">2.</span>
+              <span><strong>HRA & LTA:</strong> Enter your actual HRA and LTA exemptions if applicable (only relevant for the old regime).</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">3.</span>
+              <span><strong>Deductions:</strong> Fill in Section 80C (max ₹1.5L), 80D (health insurance), home loan interest (max ₹2L), NPS contribution (max ₹50K extra), and other deductions.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">4.</span>
+              <span><strong>Compare:</strong> The calculator shows tax under both regimes side-by-side — tax payable, in-hand monthly salary, and which regime saves more money.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">5.</span>
+              <span><strong>Inform your employer:</strong> Once you decide, submit your investment declaration to HR at the start of the financial year so they deduct TDS under the correct regime.</span>
+            </li>
+          </ul>
+        </section>
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">FY 2024-25 Income Tax Slabs at a Glance</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <p className="mb-2 font-semibold text-gray-800">Old Regime</p>
+              <table className="w-full text-sm text-gray-600">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="py-1 text-left font-medium text-gray-700">Income Slab</th>
+                    <th className="py-1 text-left font-medium text-gray-700">Tax Rate</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  <tr><td className="py-1">Up to ₹2.5 lakh</td><td className="py-1">Nil</td></tr>
+                  <tr><td className="py-1">₹2.5L – ₹5L</td><td className="py-1">5%</td></tr>
+                  <tr><td className="py-1">₹5L – ₹10L</td><td className="py-1">20%</td></tr>
+                  <tr><td className="py-1">Above ₹10L</td><td className="py-1">30%</td></tr>
+                </tbody>
+              </table>
+              <p className="mt-1 text-xs text-gray-400">87A rebate: zero tax if income ≤ ₹5L</p>
+            </div>
+            <div>
+              <p className="mb-2 font-semibold text-gray-800">New Regime (Budget 2024)</p>
+              <table className="w-full text-sm text-gray-600">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="py-1 text-left font-medium text-gray-700">Income Slab</th>
+                    <th className="py-1 text-left font-medium text-gray-700">Tax Rate</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  <tr><td className="py-1">Up to ₹3 lakh</td><td className="py-1">Nil</td></tr>
+                  <tr><td className="py-1">₹3L – ₹7L</td><td className="py-1">5%</td></tr>
+                  <tr><td className="py-1">₹7L – ₹10L</td><td className="py-1">10%</td></tr>
+                  <tr><td className="py-1">₹10L – ₹12L</td><td className="py-1">15%</td></tr>
+                  <tr><td className="py-1">₹12L – ₹15L</td><td className="py-1">20%</td></tr>
+                  <tr><td className="py-1">Above ₹15L</td><td className="py-1">30%</td></tr>
+                </tbody>
+              </table>
+              <p className="mt-1 text-xs text-gray-400">87A rebate: zero tax if income ≤ ₹7L</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-gray-400">All figures are for individuals below 60 years. Add 4% cess on final tax amount. Standard deduction: ₹50,000 (old) / ₹75,000 (new).</p>
+        </section>
+      </div>
+
       <FAQSection items={faqs} />
     </div>
   );

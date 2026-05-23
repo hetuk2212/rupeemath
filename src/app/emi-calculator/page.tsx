@@ -19,29 +19,29 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "How is EMI calculated?",
+    question: "Does making a prepayment reduce my EMI or tenure?",
     answer:
-      "EMI = P × r × (1+r)^n / [(1+r)^n – 1], where P is the principal loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100), and n is the number of monthly installments.",
+      "Both are possible — it depends on your bank's policy. Most banks give you the choice: either reduce the outstanding tenure (you finish the loan faster while keeping the same EMI) or reduce the EMI amount (the tenure stays the same). Reducing tenure saves more interest overall and is usually the better financial choice.",
   },
   {
-    question: "Does prepayment reduce EMI?",
+    question: "What are floating rate home loans?",
     answer:
-      "Prepayment reduces the outstanding principal, which reduces either the tenure or the EMI amount depending on the bank's policy. Most banks offer the option to choose.",
+      "Floating rate home loans have an interest rate that changes with the RBI repo rate. When the RBI cuts rates, your EMI (or tenure) decreases; when rates rise, it increases. Floating rates are linked to an external benchmark (EBLR) since 2019. Fixed rate loans have a constant EMI throughout but are typically 1–2% higher than floating rates.",
   },
   {
-    question: "What is a good EMI-to-income ratio?",
+    question: "Which bank offers the lowest home loan interest rate in India?",
     answer:
-      "Ideally, your total EMI obligations should not exceed 40–50% of your net monthly income. This is known as the Fixed Obligation to Income Ratio (FOIR) that lenders use to evaluate loan eligibility.",
+      "Interest rates change frequently. As of 2025, major PSU banks (SBI, Bank of Baroda, PNB) and private banks (HDFC, ICICI, Kotak) offer home loan rates in the range of 8.25–9.5% p.a. for salaried borrowers with good CIBIL scores. Always compare current rates at the time of applying — even a 0.25% difference saves lakhs over a 20-year tenure.",
   },
   {
-    question: "What is the difference between flat rate and reducing balance EMI?",
+    question: "How can I reduce my loan EMI?",
     answer:
-      "In flat rate, interest is calculated on the full principal throughout the tenure. In reducing balance (used by most banks), interest is calculated on the remaining outstanding principal each month — which is cheaper.",
+      "You can reduce your EMI by: (1) making a larger down payment to reduce the principal, (2) choosing a longer repayment tenure (though this increases total interest paid), (3) negotiating a lower rate with your bank or switching to a lower-rate lender via balance transfer, or (4) making partial prepayments to reduce the outstanding principal.",
   },
   {
-    question: "Can I reduce my home loan EMI?",
+    question: "What is better — a shorter or longer loan tenure?",
     answer:
-      "Yes. You can reduce EMI by: (1) making a larger down payment, (2) choosing a longer tenure, (3) negotiating a lower interest rate with your bank, or (4) making partial prepayments to reduce the principal.",
+      "A shorter tenure means a higher EMI but significantly less total interest paid. A longer tenure lowers your monthly burden but you pay much more interest overall. For example, a ₹30 lakh loan at 8.5% for 10 years costs ₹14.9L in interest; the same loan for 20 years costs ₹33.5L in interest. Choose the shortest tenure your monthly budget can comfortably support.",
   },
 ];
 
@@ -63,6 +63,68 @@ export default function EMICalculatorPage() {
         ctaLabel="Compare Loan Rates →"
         ctaHref="#"
       />
+
+      {/* SEO Content Sections */}
+      <div className="mt-10 space-y-6">
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">What is an EMI?</h2>
+          <p className="text-sm leading-relaxed text-gray-600">
+            An <strong>Equated Monthly Instalment (EMI)</strong> is the fixed amount you pay to your
+            lender every month until the loan is fully repaid. Each EMI has two components: a
+            <strong> principal</strong> portion (which reduces your outstanding loan balance) and an
+            <strong> interest</strong> portion (the cost of borrowing). In the early months of a loan,
+            the majority of your EMI goes toward interest. As you pay more instalments, the principal
+            component rises and the interest portion decreases — this is called an <strong>amortizing
+            loan</strong>. EMI-based loans are used for home loans, car loans, personal loans, and
+            consumer durable loans across all major Indian banks and NBFCs.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">How to Use the RupeeMath EMI Calculator</h2>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">1.</span>
+              <span><strong>Loan Amount:</strong> Enter the total loan amount you need (e.g., ₹30,00,000 for a home loan).</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">2.</span>
+              <span><strong>Interest Rate:</strong> Enter the annual interest rate offered by your bank (e.g., 8.5%). Check your sanction letter or bank website for the current rate.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">3.</span>
+              <span><strong>Loan Tenure:</strong> Enter the repayment period in months (e.g., 240 months = 20 years for a home loan).</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">4.</span>
+              <span><strong>View results:</strong> See your Monthly EMI, Total Amount Payable, and Total Interest instantly. The pie chart shows the split between principal and interest.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 font-bold text-primary">5.</span>
+              <span><strong>Compare scenarios:</strong> Adjust the tenure slider to see how a shorter or longer loan period affects your EMI and total interest cost.</span>
+            </li>
+          </ul>
+        </section>
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">EMI Formula Explained</h2>
+          <p className="mb-3 text-sm leading-relaxed text-gray-600">
+            The standard reducing balance EMI formula used by all Indian banks is:
+          </p>
+          <div className="mb-4 rounded-lg bg-gray-100 px-4 py-3 font-mono text-sm text-gray-800">
+            EMI = P × r × (1 + r)ⁿ / [(1 + r)ⁿ – 1]
+          </div>
+          <ul className="space-y-1 text-sm text-gray-600">
+            <li><strong>P</strong> — Principal loan amount (e.g., ₹30,00,000)</li>
+            <li><strong>r</strong> — Monthly interest rate = Annual rate ÷ 12 ÷ 100 (e.g., 8.5% → 0.007083)</li>
+            <li><strong>n</strong> — Number of monthly instalments (e.g., 20 years → 240 months)</li>
+          </ul>
+          <p className="mt-3 text-sm text-gray-500">
+            Example: ₹30 lakh at 8.5% for 20 years → EMI ≈ ₹26,035/month. Total payable ≈ ₹62.5 lakh. Interest cost ≈ ₹32.5 lakh — more than the original loan.
+          </p>
+        </section>
+      </div>
+
       <FAQSection items={faqs} />
     </div>
   );
