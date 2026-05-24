@@ -1,0 +1,17 @@
+{
+  "name": "RupeeMath - Financial Calculators",
+  "short_name": "RupeeMath",
+  "description": "Free financial calculators for India — SIP, EMI, FD, Income Tax, and Home Loan eligibility.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0D1B2A",
+  "background_color": "#0D1B2A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

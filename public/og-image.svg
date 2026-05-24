@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0D1B2A"/>
+
+  <!-- Subtle dot grid pattern -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Saffron ambient glow -->
+  <radialGradient id="glow" cx="50%" cy="40%" r="45%">
+    <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#FF6B35" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Left saffron accent bar -->
+  <rect x="80" y="200" width="6" height="230" rx="3" fill="#FF6B35" opacity="0.8"/>
+
+  <!-- Rupee symbol -->
+  <text
+    x="120"
+    y="320"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="900"
+    font-size="160"
+    fill="#FF6B35"
+    opacity="0.15"
+    text-anchor="start"
+    dominant-baseline="middle"
+  >₹</text>
+
+  <!-- RupeeMath wordmark -->
+  <text
+    x="120"
+    y="265"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="900"
+    font-size="88"
+    text-anchor="start"
+    dominant-baseline="middle"
+  >
+    <tspan fill="#FF6B35">Rupee</tspan><tspan fill="#ffffff">Math</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text
+    x="122"
+    y="345"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="400"
+    font-size="32"
+    fill="#8fa8c4"
+    text-anchor="start"
+    dominant-baseline="middle"
+  >Free Financial Calculators for Indians</text>
+
+  <!-- Bottom feature pills -->
+  <rect x="122" y="420" width="160" height="40" rx="20" fill="#1a2d42"/>
+  <text x="202" y="440" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="#FF6B35" text-anchor="middle" dominant-baseline="middle">SIP</text>
+
+  <rect x="298" y="420" width="160" height="40" rx="20" fill="#1a2d42"/>
+  <text x="378" y="440" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="#FF6B35" text-anchor="middle" dominant-baseline="middle">EMI</text>
+
+  <rect x="474" y="420" width="160" height="40" rx="20" fill="#1a2d42"/>
+  <text x="554" y="440" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="#FF6B35" text-anchor="middle" dominant-baseline="middle">FD</text>
+
+  <rect x="650" y="420" width="220" height="40" rx="20" fill="#1a2d42"/>
+  <text x="760" y="440" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="#FF6B35" text-anchor="middle" dominant-baseline="middle">Income Tax</text>
+
+  <!-- Domain -->
+  <text
+    x="1120"
+    y="580"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="600"
+    font-size="22"
+    fill="#4a6580"
+    text-anchor="end"
+    dominant-baseline="middle"
+  >rupeemath.co.in</text>
+</svg>

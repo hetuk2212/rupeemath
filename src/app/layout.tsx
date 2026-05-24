@@ -22,12 +22,21 @@ export const metadata: Metadata = {
   description:
     "Free online financial calculators for India — SIP, EMI, FD, Income Tax, and Home Loan eligibility. Instant results with charts.",
   keywords: ["financial calculator", "SIP calculator", "EMI calculator", "income tax calculator India"],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/favicon.svg", sizes: "any" },
+    ],
+  },
+  manifest: "/manifest.json",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://www.rupeemath.co.in",
     siteName: "RupeeMath",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
