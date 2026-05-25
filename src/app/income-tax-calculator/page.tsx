@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IncomeTaxCalculator } from "@/components/calculators/IncomeTaxCalculator";
+import { PDFDownload } from "@/components/shared/PDFDownload";
 import { FAQSection } from "@/components/shared/FAQSection";
 import { AffiliateCTA } from "@/components/shared/AffiliateCTA";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -57,6 +58,7 @@ export default function IncomeTaxPage() {
         to instantly see which regime puts more money in your pocket.
       </p>
       <IncomeTaxCalculator />
+      <PDFDownload title="Income Tax Calculator Report" />
       <AffiliateCTA
         heading="Save More Tax with NPS"
         subtext="Invest in NPS and claim additional ₹50,000 deduction under Section 80CCD(1B)."

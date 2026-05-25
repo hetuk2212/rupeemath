@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeLoanCalculator } from "@/components/calculators/HomeLoanCalculator";
+import { PDFDownload } from "@/components/shared/PDFDownload";
 import { FAQSection } from "@/components/shared/FAQSection";
 import { AffiliateCTA } from "@/components/shared/AffiliateCTA";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -57,6 +58,7 @@ export default function HomeLoanPage() {
         obligations. Uses the standard 50% FOIR rule used by Indian banks.
       </p>
       <HomeLoanCalculator />
+      <PDFDownload title="Home Loan Eligibility Report" />
       <AffiliateCTA
         heading="Check Your Real Eligibility with Banks"
         subtext="Get pre-approved offers from 20+ banks without affecting your CIBIL score."

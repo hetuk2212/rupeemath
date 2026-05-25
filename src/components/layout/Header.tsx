@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { Zap } from "lucide-react";
-
-const navLinks = [
-  { label: "SIP", href: "/sip-calculator" },
-  { label: "EMI", href: "/emi-calculator" },
-  { label: "FD", href: "/fd-calculator" },
-  { label: "Income Tax", href: "/income-tax-calculator" },
-  { label: "Home Loan", href: "/home-loan-eligibility" },
-];
+import { NavDropdown } from "./NavDropdown";
 
 export function Header() {
   return (
@@ -24,30 +17,14 @@ export function Header() {
           </span>
         </div>
 
-        <nav className="hidden items-center gap-0.5 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="group relative rounded-lg px-3 py-1.5 text-sm font-semibold text-gray-600 transition-colors hover:text-primary"
-            >
-              {link.label}
-              <span className="absolute bottom-0.5 left-3 right-3 h-0.5 origin-left scale-x-0 rounded-full bg-primary transition-transform duration-200 group-hover:scale-x-100" />
-            </Link>
-          ))}
-        </nav>
+        <NavDropdown />
 
-        <nav className="flex items-center gap-0.5 md:hidden">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="rounded-md px-2 py-1 text-xs font-semibold text-gray-600 transition-colors hover:text-primary"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <Link
+          href="/sip-calculator"
+          className="hidden rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm transition-all hover:bg-primary-600 sm:block"
+        >
+          Start Calculating
+        </Link>
       </div>
     </header>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EMICalculator } from "@/components/calculators/EMICalculator";
+import { PDFDownload } from "@/components/shared/PDFDownload";
 import { FAQSection } from "@/components/shared/FAQSection";
 import { AffiliateCTA } from "@/components/shared/AffiliateCTA";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -57,6 +58,7 @@ export default function EMICalculatorPage() {
         personal loan. See the principal vs interest breakdown.
       </p>
       <EMICalculator />
+      <PDFDownload title="EMI Calculator Report" />
       <AffiliateCTA
         heading="Get the Best Loan Rates"
         subtext="Compare interest rates from 20+ banks and NBFCs in India."

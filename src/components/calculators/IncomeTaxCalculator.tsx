@@ -47,7 +47,7 @@ export function IncomeTaxCalculator() {
   const better = result.betterRegime;
 
   return (
-    <div className="space-y-6 pb-20 md:pb-0">
+    <div id="calc-pdf-content" className="space-y-6 pb-20 md:pb-0">
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Inputs */}
         <div className="space-y-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-orange-100">

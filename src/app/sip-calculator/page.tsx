@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SIPCalculator } from "@/components/calculators/SIPCalculator";
+import { PDFDownload } from "@/components/shared/PDFDownload";
 import { FAQSection } from "@/components/shared/FAQSection";
 import { AffiliateCTA } from "@/components/shared/AffiliateCTA";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -57,6 +58,7 @@ export default function SIPCalculatorPage() {
         into a large corpus over time.
       </p>
       <SIPCalculator />
+      <PDFDownload title="SIP Calculator Report" />
       <AffiliateCTA
         heading="Ready to Start Your SIP?"
         subtext="Compare top mutual funds and start investing in minutes."

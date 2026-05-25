@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FDCalculator } from "@/components/calculators/FDCalculator";
+import { PDFDownload } from "@/components/shared/PDFDownload";
 import { FAQSection } from "@/components/shared/FAQSection";
 import { AffiliateCTA } from "@/components/shared/AffiliateCTA";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -57,6 +58,7 @@ export default function FDCalculatorPage() {
         frequencies — monthly, quarterly, half-yearly, and annually.
       </p>
       <FDCalculator />
+      <PDFDownload title="FD Calculator Report" />
       <AffiliateCTA
         heading="Get the Best FD Rates"
         subtext="Compare Fixed Deposit rates from top Indian banks and small finance banks."
