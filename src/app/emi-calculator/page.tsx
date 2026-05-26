@@ -6,9 +6,9 @@ import { AffiliateCTA } from "@/components/shared/AffiliateCTA";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "EMI Calculator 2025 — Calculate Loan EMI Online",
+  title: "EMI Calculator — Home Loan, Car Loan, Personal Loan India",
   description:
-    "Calculate your monthly loan EMI instantly. Enter loan amount, interest rate, and tenure to see your EMI, total interest, and complete amortization breakdown.",
+    "Calculate EMI for home loan, car loan and personal loan instantly. Free FOIR calculator. Check loan eligibility and monthly EMI amount. No signup needed.",
   keywords: ["EMI calculator", "loan EMI calculator India", "home loan EMI", "car loan EMI calculator"],
   alternates: { canonical: "https://www.rupeemath.co.in/emi-calculator" },
   openGraph: {

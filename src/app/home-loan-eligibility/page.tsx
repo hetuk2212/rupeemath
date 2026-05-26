@@ -6,9 +6,9 @@ import { AffiliateCTA } from "@/components/shared/AffiliateCTA";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Home Loan Eligibility Calculator 2025 — Check How Much Loan You Get",
+  title: "Home Loan Eligibility Calculator — Maximum Loan Amount",
   description:
-    "Check your home loan eligibility instantly. Enter your monthly income and existing EMIs to find the maximum home loan amount you can get from Indian banks.",
+    "Calculate maximum home loan eligibility based on salary. Free housing loan eligibility calculator India. Check how much home loan you can get on your salary instantly.",
   keywords: ["home loan eligibility calculator", "home loan eligibility India", "how much home loan can I get", "FOIR calculator"],
   alternates: { canonical: "https://www.rupeemath.co.in/home-loan-eligibility" },
   openGraph: {

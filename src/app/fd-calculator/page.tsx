@@ -6,9 +6,9 @@ import { AffiliateCTA } from "@/components/shared/AffiliateCTA";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "FD Calculator 2025 — Fixed Deposit Maturity Calculator",
+  title: "FD Calculator 2026 — Fixed Deposit Maturity Calculator India",
   description:
-    "Calculate your Fixed Deposit maturity amount online. Enter principal, interest rate, tenure, and compounding frequency to see your FD returns instantly.",
+    "Calculate fixed deposit maturity amount instantly. Free FD calculator for all Indian banks — SBI, HDFC, ICICI. Enter amount, rate, tenure — get results in seconds.",
   keywords: ["FD calculator", "fixed deposit calculator", "FD interest calculator India", "FD maturity amount"],
   alternates: { canonical: "https://www.rupeemath.co.in/fd-calculator" },
   openGraph: {
