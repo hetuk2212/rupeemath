@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "rupeemath.co.in" }],
+        destination: "https://www.rupeemath.co.in/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
