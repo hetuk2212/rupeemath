@@ -16,6 +16,9 @@ const calcPages = [
   "/step-up-sip-calculator",
   "/gratuity-calculator",
   "/gst-calculator",
+  "/home-loan-on-salary",
+  "/emi-30-lakh-home-loan",
+  "/sip-5000-per-month",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

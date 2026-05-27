@@ -59,6 +59,15 @@ export default function SIPCalculatorPage() {
       </p>
       <SIPCalculator />
       <PDFDownload title="SIP Calculator Report" />
+      <div className="mt-6 rounded-xl border border-border bg-orange-50 p-4">
+        <p className="text-sm text-gray-700">
+          <strong>Popular:</strong>{" "}
+          <a href="/sip-5000-per-month" className="font-semibold text-primary underline underline-offset-2">
+            ₹5000 SIP Returns for 10, 15, 20, 25, 30 Years →
+          </a>{" "}
+          — detailed projections with rate comparison tables.
+        </p>
+      </div>
       <AffiliateCTA
         heading="Ready to Start Your SIP?"
         subtext="Compare top mutual funds and start investing in minutes."

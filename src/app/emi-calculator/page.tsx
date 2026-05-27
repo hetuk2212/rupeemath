@@ -59,6 +59,15 @@ export default function EMICalculatorPage() {
       </p>
       <EMICalculator />
       <PDFDownload title="EMI Calculator Report" />
+      <div className="mt-6 rounded-xl border border-border bg-orange-50 p-4">
+        <p className="text-sm text-gray-700">
+          <strong>Popular:</strong>{" "}
+          <a href="/emi-30-lakh-home-loan" className="font-semibold text-primary underline underline-offset-2">
+            EMI for ₹30 Lakh Home Loan →
+          </a>{" "}
+          — see monthly payment at all rates and tenures with a full comparison table.
+        </p>
+      </div>
       <AffiliateCTA
         heading="Get the Best Loan Rates"
         subtext="Compare interest rates from 20+ banks and NBFCs in India."

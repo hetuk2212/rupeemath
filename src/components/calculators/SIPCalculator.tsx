@@ -8,8 +8,8 @@ import { ChartWrapper } from "@/components/shared/ChartWrapper";
 import { calculateSIP } from "@/lib/calculators/sip";
 import { formatLakhs, formatPercent } from "@/lib/utils";
 
-export function SIPCalculator() {
-  const [monthly, setMonthly] = useState(10000);
+export function SIPCalculator({ defaultMonthly = 10000 }: { defaultMonthly?: number } = {}) {
+  const [monthly, setMonthly] = useState(defaultMonthly);
   const [rate, setRate] = useState(12);
   const [years, setYears] = useState(10);
 

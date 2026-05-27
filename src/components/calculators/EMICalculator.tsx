@@ -8,8 +8,8 @@ import { ChartWrapper } from "@/components/shared/ChartWrapper";
 import { calculateEMI } from "@/lib/calculators/emi";
 import { formatLakhs, formatPercent } from "@/lib/utils";
 
-export function EMICalculator() {
-  const [loan, setLoan] = useState(2000000);
+export function EMICalculator({ defaultLoan = 2000000 }: { defaultLoan?: number } = {}) {
+  const [loan, setLoan] = useState(defaultLoan);
   const [rate, setRate] = useState(8.5);
   const [months, setMonths] = useState(240);
 
