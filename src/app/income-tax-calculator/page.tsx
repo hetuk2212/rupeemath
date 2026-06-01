@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { IncomeTaxCalculator } from "@/components/calculators/IncomeTaxCalculator";
 import { PDFDownload } from "@/components/shared/PDFDownload";
 import { FAQSection } from "@/components/shared/FAQSection";
@@ -154,6 +155,27 @@ export default function IncomeTaxPage() {
           <p className="mt-3 text-xs text-gray-400">All figures are for individuals below 60 years. Add 4% cess on final tax amount. Standard deduction: ₹50,000 (old) / ₹75,000 (new).</p>
         </section>
       </div>
+
+      {/* Related Calculators */}
+      <section className="mt-10 rounded-xl border border-border bg-gray-50 p-6">
+        <h2 className="mb-4 text-lg font-bold text-gray-900">Related Calculators</h2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/salary-calculator"
+            className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-orange-50"
+          >
+            Calculate your in-hand salary
+            <span className="ml-2">→</span>
+          </Link>
+          <Link
+            href="/sip-calculator"
+            className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-orange-50"
+          >
+            Save tax with SIP investments
+            <span className="ml-2">→</span>
+          </Link>
+        </div>
+      </section>
 
       <FAQSection items={faqs} />
     </div>

@@ -205,6 +205,34 @@ export default function HomeLoanPage() {
         </section>
       </div>
 
+      {/* Related Calculators */}
+      <section className="mt-10 rounded-xl border border-border bg-gray-50 p-6">
+        <h2 className="mb-4 text-lg font-bold text-gray-900">Related Calculators</h2>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <Link
+            href="/emi-calculator"
+            className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-orange-50"
+          >
+            Calculate your home loan EMI
+            <span className="ml-2">→</span>
+          </Link>
+          <Link
+            href="/emi-30-lakh-home-loan"
+            className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-orange-50"
+          >
+            EMI for ₹30 lakh home loan
+            <span className="ml-2">→</span>
+          </Link>
+          <Link
+            href="/home-loan-on-salary"
+            className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-orange-50"
+          >
+            Check eligibility by salary
+            <span className="ml-2">→</span>
+          </Link>
+        </div>
+      </section>
+
       <FAQSection items={faqs} />
     </div>
   );
