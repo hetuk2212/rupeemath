@@ -20,6 +20,13 @@ export function Header() {
         <NavDropdown />
 
         <Link
+          href="/blog"
+          className="hidden text-sm font-bold text-gray-700 transition-colors hover:text-primary sm:block"
+        >
+          Blog
+        </Link>
+
+        <Link
           href="/sip-calculator"
           className="hidden rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm transition-all hover:bg-primary-600 sm:block"
         >

@@ -19,6 +19,12 @@ const calcPages = [
   "/home-loan-on-salary",
   "/emi-30-lakh-home-loan",
   "/sip-5000-per-month",
+  "/blog",
+  "/blog/home-loan-tips-india",
+  "/blog/sip-vs-fd-which-is-better",
+  "/blog/new-vs-old-tax-regime-2026",
+  "/blog/how-to-improve-cibil-score",
+  "/blog/home-loan-documents-required",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
