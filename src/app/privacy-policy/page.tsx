@@ -77,7 +77,7 @@ We do not sell, trade, or rent your personal information to third parties.`,
     heading: "10. Contact Us",
     content: `If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at:
 
-Email: admin@rupeemath.co.in
+Email: hetuk2212@gmail.com
 Website: https://www.rupeemath.co.in`,
   },
 ];
@@ -117,8 +117,8 @@ export default function PrivacyPolicyPage() {
       <div className="mt-10 rounded-xl border border-primary-200 bg-primary-50 p-5 text-sm text-gray-600">
         <p>
           <strong className="text-primary">Questions about this policy?</strong> Contact us at{" "}
-          <a href="mailto:admin@rupeemath.co.in" className="font-medium text-primary hover:underline">
-            admin@rupeemath.co.in
+          <a href="mailto:hetuk2212@gmail.com" className="font-medium text-primary hover:underline">
+            hetuk2212@gmail.com
           </a>
         </p>
       </div>

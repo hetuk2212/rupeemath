@@ -35,6 +35,12 @@ const groups = [
   },
 ];
 
+const pages = [
+  { label: "Blog", href: "/blog" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+
 export function NavDropdown() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -63,20 +69,62 @@ export function NavDropdown() {
       </button>
 
       {open && (
-        <div className="absolute left-1/2 top-full z-50 mt-2 w-[640px] max-w-[95vw] -translate-x-1/2 rounded-2xl border border-orange-100 bg-white p-5 shadow-2xl">
-          <div className="grid grid-cols-3 gap-5">
-            {groups.map((group) => (
+        <div
+          className={[
+            "absolute top-full z-50 mt-2 rounded-2xl border border-orange-100 bg-white shadow-2xl",
+            // Mobile: anchored to left edge of viewport with side margins
+            "left-0 w-[calc(100vw-2rem)] -mx-4",
+            // Desktop: centered wide panel (unchanged from original)
+            "sm:left-1/2 sm:w-[640px] sm:max-w-[95vw] sm:-translate-x-1/2 sm:mx-0 sm:p-5",
+          ].join(" ")}
+        >
+          {/* ── DESKTOP layout (3-column grid) — unchanged ── */}
+          <div className="hidden sm:block">
+            <div className="grid grid-cols-3 gap-5">
+              {groups.map((group) => (
+                <div key={group.label}>
+                  <p className="mb-2 text-xs font-black uppercase tracking-widest text-primary">
+                    {group.label}
+                  </p>
+                  <ul className="space-y-1">
+                    {group.items.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          onClick={() => setOpen(false)}
+                          className="block rounded-lg px-2 py-1.5 text-sm font-medium text-gray-600 transition-colors hover:bg-primary-50 hover:text-primary"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 border-t border-orange-100 pt-3 text-center">
+              <p className="text-xs text-gray-400">13 free calculators • No signup • Download PDF reports</p>
+            </div>
+          </div>
+
+          {/* ── MOBILE layout (scrollable single-column list) ── */}
+          <div className="sm:hidden max-h-[72vh] overflow-y-auto overscroll-contain rounded-2xl">
+            {groups.map((group, gi) => (
               <div key={group.label}>
-                <p className="mb-2 text-xs font-black uppercase tracking-widest text-primary">
-                  {group.label}
-                </p>
-                <ul className="space-y-1">
+                {/* Section header */}
+                <div className={`px-4 py-2.5 ${gi > 0 ? "border-t border-orange-100" : ""}`}>
+                  <p className="text-xs font-black uppercase tracking-widest text-primary">
+                    {group.label}
+                  </p>
+                </div>
+                {/* Calculator links — full-width, 48px min tap height */}
+                <ul>
                   {group.items.map((item) => (
                     <li key={item.href}>
                       <Link
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className="block rounded-lg px-2 py-1.5 text-sm font-medium text-gray-600 transition-colors hover:bg-primary-50 hover:text-primary"
+                        className="flex min-h-[48px] w-full items-center border-t border-gray-50 px-4 text-sm font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary"
                       >
                         {item.label}
                       </Link>
@@ -85,9 +133,26 @@ export function NavDropdown() {
                 </ul>
               </div>
             ))}
-          </div>
-          <div className="mt-4 border-t border-orange-100 pt-3 text-center">
-            <p className="text-xs text-gray-400">13 free calculators • No signup • Download PDF reports</p>
+
+            {/* Pages section */}
+            <div className="border-t border-orange-100">
+              <div className="px-4 py-2.5">
+                <p className="text-xs font-black uppercase tracking-widest text-primary">Pages</p>
+              </div>
+              <ul>
+                {pages.map((page) => (
+                  <li key={page.href}>
+                    <Link
+                      href={page.href}
+                      onClick={() => setOpen(false)}
+                      className="flex min-h-[48px] w-full items-center border-t border-gray-50 px-4 text-sm font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary"
+                    >
+                      {page.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       )}

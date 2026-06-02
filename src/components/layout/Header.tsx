@@ -27,6 +27,20 @@ export function Header() {
         </Link>
 
         <Link
+          href="/about"
+          className="hidden text-sm font-bold text-gray-700 transition-colors hover:text-primary sm:block"
+        >
+          About
+        </Link>
+
+        <Link
+          href="/contact"
+          className="hidden text-sm font-bold text-gray-700 transition-colors hover:text-primary sm:block"
+        >
+          Contact
+        </Link>
+
+        <Link
           href="/sip-calculator"
           className="hidden rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm transition-all hover:bg-primary-600 sm:block"
         >
