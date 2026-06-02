@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { TrendingUp, CreditCard, Landmark, Calculator, Home, ArrowRight, PiggyBank, Repeat, FileText, Building2, Receipt } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "RupeeMath — Free Financial Calculators for India",
+  description:
+    "13 free financial calculators for Indian investors and borrowers. SIP, EMI, FD, Income Tax, Home Loan, PPF, HRA, Gratuity and more. No signup. Instant results.",
+  alternates: { canonical: "https://www.rupeemath.co.in" },
+  openGraph: {
+    title: "RupeeMath — Free Financial Calculators for India",
+    description: "13 free calculators: SIP, EMI, FD, Income Tax, Home Loan and more. No signup needed.",
+    url: "https://www.rupeemath.co.in",
+  },
+};
 
 const groups = [
   {
