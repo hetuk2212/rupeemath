@@ -127,6 +127,54 @@ export default function HomePage() {
         ))}
       </section>
 
+      {/* Why Choose RupeeMath */}
+      <section className="border-t border-border bg-white px-4 py-14">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-8 text-center text-xl font-black text-gray-900">
+            Why Choose <span className="text-primary">RupeeMath</span>?
+          </h2>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[
+              { emoji: "🆓", title: "100% Free", desc: "All calculators free forever — no hidden charges, no premium tier." },
+              { emoji: "🚫", title: "No Signup", desc: "Use every tool without creating an account or sharing personal data." },
+              { emoji: "⚡", title: "Instant Results", desc: "Results update in real time as you move sliders — no page reload." },
+              { emoji: "📄", title: "PDF Reports", desc: "Download a PDF of your calculation to save or share with your advisor." },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="flex flex-col items-center rounded-2xl border border-border bg-gray-50 p-5 text-center"
+              >
+                <div className="mb-3 text-3xl">{item.emoji}</div>
+                <p className="mb-1.5 font-bold text-gray-900">{item.title}</p>
+                <p className="text-xs leading-relaxed text-gray-500">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted by Indians */}
+      <section className="bg-orange-50 px-4 py-12">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="mb-4 text-xl font-black text-gray-900">
+            Trusted by <span className="text-primary">Indians</span>
+          </h2>
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-gray-600">
+            RupeeMath provides free financial calculators for SIP, EMI, FD, Income Tax, and Home
+            Loan calculations. Our tools help Indians make smarter financial decisions — whether
+            you are planning your first SIP, comparing tax regimes, calculating EMI for a home
+            loan, or checking your fixed deposit maturity. Every calculator uses the correct
+            Indian formulas, up-to-date tax slabs, and RBI-standard FOIR norms, so you can trust
+            the numbers before approaching a bank or financial advisor.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3 text-xs font-medium text-gray-500">
+            {["SIP Calculator", "EMI Calculator", "FD Calculator", "Income Tax Calculator", "Home Loan Eligibility", "PPF Calculator", "HRA Calculator"].map((t) => (
+              <span key={t} className="rounded-full border border-border bg-white px-3 py-1">{t}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Trust Section */}
       <section className="bg-navy-900 px-4 py-14">
         <div className="mx-auto max-w-4xl">
