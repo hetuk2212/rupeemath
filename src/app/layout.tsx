@@ -23,12 +23,8 @@ export const metadata: Metadata = {
     "Free online financial calculators for India — SIP, EMI, FD, Income Tax, and Home Loan eligibility. Instant results with charts.",
   keywords: ["financial calculator", "SIP calculator", "EMI calculator", "income tax calculator India"],
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-    apple: [
-      { url: "/favicon.svg", sizes: "any" },
-    ],
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
   manifest: "/manifest.json",
   openGraph: {
