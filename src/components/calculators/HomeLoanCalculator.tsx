@@ -8,8 +8,8 @@ import { ChartWrapper } from "@/components/shared/ChartWrapper";
 import { calculateHomeLoanEligibility } from "@/lib/calculators/home-loan";
 import { formatLakhs, formatPercent } from "@/lib/utils";
 
-export function HomeLoanCalculator() {
-  const [income, setIncome] = useState(100000);
+export function HomeLoanCalculator({ defaultIncome = 100000 }: { defaultIncome?: number } = {}) {
+  const [income, setIncome] = useState(defaultIncome);
   const [existingEMIs, setExistingEMIs] = useState(0);
   const [rate, setRate] = useState(8.5);
   const [years, setYears] = useState(20);
