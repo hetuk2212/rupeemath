@@ -138,6 +138,178 @@ export default function EMI30LakhPage() {
         </section>
       </div>
 
+      {/* Section: Salary affordability */}
+      <section className="mt-6 rounded-xl border border-border bg-white p-6 shadow-sm">
+        <h2 className="mb-3 text-xl font-bold text-gray-900">30 Lakh Home Loan EMI on Different Salaries</h2>
+        <p className="mb-4 text-sm leading-relaxed text-gray-600">
+          Whether a ₹30 lakh home loan is affordable depends on your monthly take-home salary. The table
+          below shows how comfortable the EMI feels at different income levels, assuming 8.5% interest
+          rate, no existing EMIs, and a tenure chosen to keep EMI within 40–50% of income.
+        </p>
+        <div className="overflow-x-auto rounded-xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50">
+              <tr className="border-b border-border">
+                <th className="px-4 py-2.5 text-left font-semibold text-gray-800">Monthly Salary</th>
+                <th className="px-4 py-2.5 text-left font-semibold text-gray-800">Affordability</th>
+                <th className="px-4 py-2.5 text-left font-semibold text-primary">Recommended Tenure</th>
+                <th className="px-4 py-2.5 text-right font-semibold text-gray-800">EMI at 8.5%</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border bg-white">
+              {[
+                { salary: "₹40,000", comfort: "Tight", tenure: "30 years", emi: "₹23,071" },
+                { salary: "₹50,000", comfort: "Comfortable", tenure: "25 years", emi: "₹24,041" },
+                { salary: "₹60,000", comfort: "Easy", tenure: "20 years", emi: "₹26,035" },
+                { salary: "₹75,000", comfort: "Very easy", tenure: "15 years", emi: "₹29,416" },
+                { salary: "₹1,00,000", comfort: "Excellent", tenure: "10 years", emi: "₹37,109" },
+              ].map((row, i) => (
+                <tr key={row.salary} className={i % 2 === 1 ? "bg-gray-50" : ""}>
+                  <td className="px-4 py-3 font-semibold text-gray-800">{row.salary}</td>
+                  <td className="px-4 py-3">
+                    <span className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                      row.comfort === "Tight" ? "bg-red-100 text-red-700" :
+                      row.comfort === "Comfortable" ? "bg-yellow-100 text-yellow-700" :
+                      row.comfort === "Easy" ? "bg-blue-100 text-blue-700" :
+                      "bg-green-100 text-green-700"
+                    }`}>{row.comfort}</span>
+                  </td>
+                  <td className="px-4 py-3 font-semibold text-primary">{row.tenure}</td>
+                  <td className="px-4 py-3 text-right text-gray-700">{row.emi}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-2 text-xs text-gray-400">EMI values at 8.5% interest rate. Affordability assumes no existing EMIs and 40–50% FOIR.</p>
+      </section>
+
+      {/* Section: 50,000 salary deep-dive */}
+      <section className="mt-6 rounded-xl border border-border bg-gray-50 p-6">
+        <h2 className="mb-3 text-xl font-bold text-gray-900">30 Lakh Home Loan EMI on 50000 Salary</h2>
+        <p className="mb-4 text-sm leading-relaxed text-gray-600">
+          A ₹50,000 net monthly salary makes a ₹30 lakh home loan <strong>comfortably achievable</strong>.
+          Here&apos;s the full picture for a ₹50,000 salary earner at 8.5% interest with no existing EMIs:
+        </p>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            { tenure: "20 years", emi: "₹26,035", pct: "52.1%", verdict: "Slightly over FOIR" },
+            { tenure: "25 years", emi: "₹24,041", pct: "48.1%", verdict: "Within 50% FOIR ✓" },
+            { tenure: "30 years", emi: "₹23,071", pct: "46.1%", verdict: "Comfortable ✓" },
+          ].map((s) => (
+            <div key={s.tenure} className="rounded-xl border border-border bg-white p-4">
+              <p className="text-xs font-black uppercase tracking-widest text-primary">{s.tenure}</p>
+              <p className="mt-1 text-lg font-bold text-gray-900">{s.emi}/mo</p>
+              <p className="text-xs text-gray-500">{s.pct} of salary</p>
+              <p className="mt-1 text-xs font-semibold text-gray-700">{s.verdict}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-4 text-sm leading-relaxed text-gray-600">
+          At ₹50,000 salary, the <strong>25-year tenure</strong> is the sweet spot — EMI of ₹24,041
+          stays just within the 50% FOIR threshold that most banks require, while total interest is
+          significantly lower than the 30-year option. If you have any existing EMIs (car loan, personal
+          loan), opt for 25–30 years or use a co-applicant to improve eligibility. Prepaying ₹50,000
+          annually from year 3 onwards can effectively reduce the real tenure to under 18 years while
+          keeping monthly cash flow comfortable.
+        </p>
+      </section>
+
+      {/* Section: SBI 2026 */}
+      <section className="mt-6 rounded-xl border border-border bg-white p-6 shadow-sm">
+        <h2 className="mb-3 text-xl font-bold text-gray-900">30 Lakh Home Loan EMI for SBI 2026</h2>
+        <p className="mb-4 text-sm leading-relaxed text-gray-600">
+          SBI (State Bank of India) is India&apos;s largest home loan lender and the first choice for
+          millions of borrowers. SBI&apos;s home loan interest rate starts at <strong>8.5% p.a.</strong> for
+          salaried borrowers with a CIBIL score above 750 (as of 2026, linked to RBI repo rate).
+          Here is the exact EMI for a ₹30 lakh SBI home loan across popular tenures:
+        </p>
+        <div className="overflow-x-auto rounded-xl border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50">
+              <tr className="border-b border-border">
+                <th className="px-4 py-2.5 text-left font-semibold text-gray-800">Tenure</th>
+                <th className="px-4 py-2.5 text-right font-semibold text-primary">Monthly EMI</th>
+                <th className="px-4 py-2.5 text-right font-semibold text-gray-800">Total Interest</th>
+                <th className="px-4 py-2.5 text-right font-semibold text-gray-800">Total Payable</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border bg-white">
+              {[
+                ["10 years", "₹37,109", "₹14.5L", "₹44.5L"],
+                ["15 years", "₹29,416", "₹22.9L", "₹52.9L"],
+                ["20 years", "₹26,035", "₹32.5L", "₹62.5L"],
+                ["25 years", "₹24,041", "₹42.1L", "₹72.1L"],
+                ["30 years", "₹23,071", "₹53.1L", "₹83.1L"],
+              ].map(([tenure, emi, interest, total], i) => (
+                <tr key={tenure} className={i % 2 === 1 ? "bg-gray-50" : ""}>
+                  <td className="px-4 py-2.5 font-medium text-gray-800">{tenure}</td>
+                  <td className="px-4 py-2.5 text-right font-bold text-primary">{emi}</td>
+                  <td className="px-4 py-2.5 text-right text-gray-700">{interest}</td>
+                  <td className="px-4 py-2.5 text-right font-semibold text-gray-800">{total}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-4 rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-blue-800">
+          <strong>Women borrower benefit:</strong> SBI offers an additional <strong>0.05% interest rate discount</strong> for
+          women applicants under its &ldquo;Her Ghar&rdquo; initiative. On a ₹30 lakh, 20-year loan, this saves
+          approximately ₹10,000–₹12,000 in total interest. The property must be in the woman applicant&apos;s
+          name (sole or joint ownership) to avail this benefit.
+        </div>
+        <p className="mt-3 text-xs text-gray-400">
+          Rate used: 8.50% p.a. SBI&apos;s actual rate is floating and subject to change with RBI repo rate revisions.
+          Verify current rate at sbi.co.in before applying.
+        </p>
+      </section>
+
+      {/* Section: How to reduce EMI */}
+      <section className="mt-6 rounded-xl border border-border bg-gray-50 p-6">
+        <h2 className="mb-3 text-xl font-bold text-gray-900">How to Reduce Your 30 Lakh Home Loan EMI</h2>
+        <p className="mb-4 text-sm leading-relaxed text-gray-600">
+          Five actionable strategies to lower your EMI or reduce the total cost of your ₹30 lakh home loan:
+        </p>
+        <ol className="space-y-4 text-sm text-gray-600">
+          {[
+            {
+              n: "1",
+              tip: "Increase your down payment",
+              detail: "The standard LTV (loan-to-value) for a ₹30 lakh home loan is 80% (bank pays ₹30L, you pay ₹7.5L on a ₹37.5L property). If you can stretch your down payment by ₹3–5 lakh, your loan principal drops proportionally — directly reducing EMI. Every extra ₹1 lakh down payment reduces EMI by approximately ₹868/month at 8.5% for 20 years.",
+            },
+            {
+              n: "2",
+              tip: "Choose a longer tenure initially",
+              detail: "Starting with a 25–30 year tenure gives you the lowest EMI (₹23,071–₹24,041/month vs ₹26,035 for 20 years). Once your income increases in 2–3 years, you can request a tenure reduction or start making annual prepayments. This strategy keeps monthly cash flow manageable early on without sacrificing long-term interest savings.",
+            },
+            {
+              n: "3",
+              tip: "Improve your CIBIL score before applying",
+              detail: "A CIBIL score of 750+ qualifies you for SBI and most banks' lowest available rates (8.5%). A score of 700–749 may attract a 0.1–0.25% higher rate — costing ₹1–2 lakh extra over 20 years. Spend 3–6 months before applying to clear credit card dues, avoid new credit inquiries, and dispute any errors in your CIBIL report.",
+            },
+            {
+              n: "4",
+              tip: "Apply with a co-applicant",
+              detail: "A working co-applicant (spouse, parent) increases your combined income, potentially qualifying you for a lower rate tier or enabling you to choose a shorter tenure — both reducing total interest. Additionally, both applicants can independently claim Section 24 (up to ₹2L/year) and Section 80C (up to ₹1.5L/year) tax deductions on the same loan.",
+            },
+            {
+              n: "5",
+              tip: "Compare rates from at least 5 banks",
+              detail: "Never accept the first offer. For a ₹30 lakh loan, get quotes from at least: SBI/Bank of Baroda (lowest PSU rates), HDFC/ICICI (fastest processing), and one NBFC like LIC HFL or Bajaj Housing. A difference of just 0.5% in rate saves ₹3.5–4 lakh over 20 years. Use each bank's pre-approval offer as a negotiation tool with other lenders.",
+            },
+          ].map((item) => (
+            <li key={item.n} className="flex items-start gap-3">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-black text-white">
+                {item.n}
+              </span>
+              <span>
+                <strong>{item.tip}:</strong> {item.detail}
+              </span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
       {/* Other loan amount links */}
       <section className="mt-10 rounded-xl border border-border bg-gray-50 p-6">
         <h2 className="mb-4 text-base font-bold text-gray-900">Other Home Loan EMI Calculators</h2>
