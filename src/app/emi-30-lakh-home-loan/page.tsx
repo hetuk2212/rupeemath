@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { EMICalculator } from "@/components/calculators/EMICalculator";
 import { PDFDownload } from "@/components/shared/PDFDownload";
 import { FAQSection } from "@/components/shared/FAQSection";
@@ -136,6 +137,25 @@ export default function EMI30LakhPage() {
           </p>
         </section>
       </div>
+
+      {/* Other loan amount links */}
+      <section className="mt-10 rounded-xl border border-border bg-gray-50 p-6">
+        <h2 className="mb-4 text-base font-bold text-gray-900">Other Home Loan EMI Calculators</h2>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/emi-20-lakh-home-loan"
+            className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-orange-50"
+          >
+            EMI for ₹20 lakh home loan <span>→</span>
+          </Link>
+          <Link
+            href="/emi-50-lakh-home-loan"
+            className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-orange-50"
+          >
+            EMI for ₹50 lakh home loan <span>→</span>
+          </Link>
+        </div>
+      </section>
 
       <FAQSection items={faqs} />
     </div>
