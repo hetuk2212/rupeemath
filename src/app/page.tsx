@@ -95,6 +95,46 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* AI Advisor Featured Card */}
+      <section className="border-b border-navy-800 bg-navy-900 px-4 py-8">
+        <div className="mx-auto max-w-4xl">
+          <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-navy-800 p-6 shadow-xl sm:p-8">
+            {/* Glow */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary opacity-10 blur-3xl"
+            />
+            <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex-1">
+                <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1 text-xs font-black uppercase tracking-widest text-white">
+                  ✨ NEW — AI Financial Advisor
+                </div>
+                <h2 className="text-xl font-black text-white sm:text-2xl">
+                  Can you afford that loan?
+                </h2>
+                <p className="mt-1.5 max-w-md text-sm leading-relaxed text-navy-300">
+                  Tell us your salary and expenses. Our AI tells you if you can afford that
+                  loan and how to manage it — in plain, honest English.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {["Personalized verdict", "Budget breakdown", "Savings tips"].map((t) => (
+                    <span key={t} className="rounded-full border border-primary/30 bg-navy-900/60 px-2.5 py-0.5 text-xs font-semibold text-primary">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <Link
+                href="/ai-advisor"
+                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-black text-white shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 hover:bg-primary-600 hover:shadow-xl"
+              >
+                Try AI Advisor Free →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Calculator Groups */}
       <section className="mx-auto w-full max-w-4xl px-4 py-14">
         {groups.map((group) => (

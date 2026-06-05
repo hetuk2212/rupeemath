@@ -30,6 +30,7 @@ const calcPages = [
   "/emi-20-lakh-home-loan",
   "/emi-50-lakh-home-loan",
   "/joint-home-loan-eligibility",
+  "/ai-advisor",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

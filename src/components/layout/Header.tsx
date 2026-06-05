@@ -41,6 +41,16 @@ export function Header() {
         </Link>
 
         <Link
+          href="/ai-advisor"
+          className="hidden items-center gap-1.5 text-sm font-bold text-gray-700 transition-colors hover:text-primary sm:flex"
+        >
+          ✨ AI Advisor
+          <span className="rounded-full bg-primary px-1.5 py-0.5 text-[10px] font-black text-white leading-none">
+            NEW
+          </span>
+        </Link>
+
+        <Link
           href="/sip-calculator"
           className="hidden rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm transition-all hover:bg-primary-600 sm:block"
         >

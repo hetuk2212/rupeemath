@@ -36,6 +36,7 @@ const groups = [
 ];
 
 const pages = [
+  { label: "✨ AI Advisor — NEW", href: "/ai-advisor" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
