@@ -156,6 +156,46 @@ export default function IncomeTaxPage() {
         </section>
       </div>
 
+      <div className="mt-6 space-y-6">
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">Income Tax in India — An Overview</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            Income tax in India is a direct tax levied by the central government on the income earned by individuals, Hindu Undivided Families (HUFs), companies, and other entities during a financial year. For individuals, it is progressive — the more you earn, the higher the percentage of your income that is taxed. India operates on a self-assessment basis, meaning taxpayers are responsible for correctly computing and paying their tax liability and filing an annual Income Tax Return (ITR). The financial year in India runs from April 1 to March 31, and the ITR for any financial year is filed in the subsequent Assessment Year — for example, income earned in FY 2025-26 (April 2025 to March 2026) is assessed and declared in AY 2026-27.
+          </p>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            India&apos;s income tax structure is administered by the Central Board of Direct Taxes (CBDT) under the Ministry of Finance. The tax is governed by the Income Tax Act, 1961, and the Finance Act passed each year introduces amendments — including changes to tax slabs, deductions, and exemptions. For salaried employees, income tax is deducted at source (TDS) by the employer every month and remitted to the government. This TDS is an advance tax against the employee&apos;s annual liability. At year-end, when the employee files their ITR, the actual liability is computed — if TDS exceeded the liability, a refund is processed; if it fell short, the difference must be paid as self-assessment tax. The entire process is now paperless and managed through the Income Tax Department&apos;s online portal at incometax.gov.in.
+          </p>
+          <p className="text-sm leading-relaxed text-gray-600">
+            One of the most significant aspects of Indian income tax for salaried employees is the availability of numerous deductions and exemptions that can substantially reduce taxable income. Section 80C alone — which covers investments in PPF, ELSS, EPF contribution, life insurance premiums, home loan principal repayment, NSC, and children&apos;s school fees — allows a deduction of up to ₹1.5 lakh per year. Combined with HRA exemption, home loan interest deduction under Section 24(b), health insurance under Section 80D, and NPS contribution under Section 80CCD, a disciplined investor can reduce their taxable income by ₹4–5 lakh or more. This is the core reason the old tax regime remains relevant and often beneficial for those who actively invest in these instruments.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">Top Tax Saving Investments Under Section 80C</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            Section 80C of the Income Tax Act is the most widely used tax-saving provision in India, allowing a deduction of up to ₹1.5 lakh per financial year from your gross income. The instruments that qualify under 80C are diverse, serving both investment and insurance purposes. Employee Provident Fund (EPF) contributions are automatically included — if you are a salaried employee, your monthly PF deduction already contributes toward this limit. Public Provident Fund (PPF) contributions up to ₹1.5 lakh per year are fully deductible and the interest is completely tax-free, making PPF an EEE (Exempt-Exempt-Exempt) instrument — one of the best risk-free, long-term savings options in India. Equity Linked Savings Scheme (ELSS) mutual funds are the most popular 80C option for wealth creation, offering market-linked returns with a 3-year lock-in period, which is the shortest lock-in among all 80C instruments.
+          </p>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            National Savings Certificate (NSC), 5-year tax-saving Fixed Deposits, Senior Citizen Savings Scheme (SCSS), and Sukanya Samriddhi Yojana (SSY) for a girl child are additional 80C instruments that cater to conservative investors. Life insurance premiums paid for self, spouse, and children also qualify under 80C — though it is important to separate the insurance need from the tax-saving purpose, as investment-linked insurance products are generally poor wealth-creation vehicles. School and college tuition fees paid for up to two children also count toward 80C. Finally, the principal repayment component of a home loan EMI qualifies under 80C, which is why home loan borrowers often reach the ₹1.5 lakh limit faster than those without a home loan.
+          </p>
+          <p className="text-sm leading-relaxed text-gray-600">
+            Beyond Section 80C, Section 80CCD(1B) allows an additional ₹50,000 deduction for voluntary NPS (National Pension System) contributions — completely separate from the ₹1.5 lakh 80C limit. This brings the maximum combined deduction from these two sections to ₹2 lakh per year, saving ₹60,000 in tax per year for someone in the 30% bracket. Section 80D allows deductions for health insurance premiums — up to ₹25,000 for self, spouse, and children, plus up to ₹50,000 for premiums paid for senior citizen parents. Given that even a basic family floater health insurance policy costs ₹15,000–₹25,000 annually, this deduction is highly accessible. Used together, Sections 80C, 80CCD(1B), and 80D can reduce taxable income by ₹3.75 lakh or more, saving ₹1.12 lakh in annual tax for a person in the 30% bracket.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">HRA Exemption — How to Calculate</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            House Rent Allowance (HRA) is a component of many salaried employees&apos; compensation packages, provided by employers to help cover rental accommodation costs. The entire HRA received is not automatically tax-free — only a portion qualifies for exemption under Section 10(13A), calculated as the minimum of three conditions: the actual HRA received from the employer, the rent paid minus 10% of basic salary, and 50% of basic salary if you live in a metro city (Delhi, Mumbai, Kolkata, or Chennai) or 40% of basic salary for non-metro cities. The exemption is the lowest of these three amounts, and the remainder is added back to your taxable income. For an employee in Mumbai paying ₹30,000/month in rent on a basic salary of ₹50,000/month and receiving ₹25,000/month HRA, the three conditions are: HRA received ₹25,000, rent minus 10% basic = ₹25,000, and 50% of basic = ₹25,000. All three are equal at ₹25,000, so the full HRA is exempt.
+          </p>
+          <p className="text-sm leading-relaxed text-gray-600">
+            Two common scenarios reduce the HRA exemption significantly. First, if you live in a non-metro city, the third condition drops from 50% to 40% of basic salary, which can cap the exemption even if you pay high rent. Second, if your rent is low relative to your salary, the second condition (rent minus 10% of basic) becomes the limiting factor. Employees who pay rent to parents can legitimately claim HRA exemption, provided the rent is genuinely paid via bank transfer, the parents declare it as rental income in their ITR, and a proper rent agreement exists. This is a legal and widely-used tax planning strategy. Note that HRA exemption is available only under the old tax regime — those who opt for the new regime cannot claim HRA exemption regardless of the rent paid.
+          </p>
+        </section>
+
+      </div>
+
       {/* Related Calculators */}
       <section className="mt-10 rounded-xl border border-border bg-gray-50 p-6">
         <h2 className="mb-4 text-lg font-bold text-gray-900">Related Calculators</h2>
@@ -177,7 +217,32 @@ export default function IncomeTaxPage() {
         </div>
       </section>
 
-      <FAQSection items={faqs} />
+      <FAQSection items={[
+        {
+          question: "What is the income tax slab for FY 2025-26?",
+          answer: "For FY 2025-26 under the new tax regime (default): income up to ₹3 lakh is taxed at 0%, ₹3–7 lakh at 5%, ₹7–10 lakh at 10%, ₹10–12 lakh at 15%, ₹12–15 lakh at 20%, and above ₹15 lakh at 30%. The Section 87A rebate makes tax zero for total income up to ₹7 lakh. Under the old regime: up to ₹2.5 lakh is 0%, ₹2.5–5 lakh is 5%, ₹5–10 lakh is 20%, and above ₹10 lakh is 30%. The old regime 87A rebate makes tax zero for income up to ₹5 lakh. Add 4% Health and Education Cess on the final computed tax under both regimes. Standard deduction is ₹75,000 under new regime and ₹50,000 under old regime.",
+        },
+        {
+          question: "Who needs to file an income tax return in India?",
+          answer: "ITR filing is mandatory for individuals whose gross total income exceeds the basic exemption limit — ₹2.5 lakh under the old regime and ₹3 lakh under the new regime. Beyond income, you must also file if your bank deposits exceed ₹1 crore in a current account or ₹50 lakh in savings accounts, if you have paid electricity bills above ₹1 lakh, if you have incurred foreign travel expenses above ₹2 lakh, or if you have foreign assets or income. Filing is also required if you want to claim a tax refund (when TDS exceeds actual liability) or carry forward capital or business losses to future years. Even if not strictly mandatory, filing is strongly advisable for building a financial record needed for home loan applications, visa processing, and credit approvals.",
+        },
+        {
+          question: "What is the last date to file ITR for FY 2025-26?",
+          answer: "For individuals and HUFs with salary or other income not requiring a tax audit, the deadline is July 31, 2026. For businesses and professionals requiring a tax audit (turnover above ₹1 crore for businesses or ₹50 lakh for professionals), the deadline is October 31, 2026. A belated return can be filed until December 31, 2026 with a late filing fee of ₹5,000 (₹1,000 if income is below ₹5 lakh). If you have unpaid tax and file after July 31, interest at 1% per month also applies from August 1. The ITR-U (updated return) facility allows you to correct errors or declare missed income for up to 2 years after the assessment year with an additional tax penalty.",
+        },
+        {
+          question: "What is the standard deduction in income tax?",
+          answer: "The standard deduction is a flat deduction from gross salary income available to all salaried employees and pensioners, without the need to submit any proof of expenses. For FY 2025-26, the standard deduction is ₹75,000 under the new tax regime (increased from ₹50,000 in Budget 2024) and ₹50,000 under the old tax regime. This deduction was reintroduced in Budget 2018, replacing the earlier transport allowance (₹19,200) and medical reimbursement (₹15,000) exemptions. Every salaried employee automatically gets this deduction — your employer applies it when computing your TDS, and it is shown in your Form 16. Pensioners receiving pension from a former employer are also eligible for the standard deduction.",
+        },
+        {
+          question: "How to save maximum tax in India legally?",
+          answer: "The most effective legal tax saving strategy combines multiple provisions: Section 80C (invest ₹1.5 lakh in ELSS, PPF, or EPF to save ₹45,000 in tax at 30% slab), Section 80CCD(1B) (additional ₹50,000 NPS investment saves ₹15,000), Section 80D (health insurance premium up to ₹25,000 self + ₹50,000 for senior citizen parents saves ₹22,500), Section 24(b) (home loan interest up to ₹2 lakh saves ₹60,000), and HRA exemption (significant for metro renters). Together, these provisions can reduce taxable income by ₹4.25 lakh or more. Whether these savings outweigh the new regime&apos;s lower rates depends entirely on the total deduction amount — use our calculator to compare both regimes with your actual numbers.",
+        },
+        {
+          question: "What is Section 80C and what is the maximum deduction?",
+          answer: "Section 80C is the most widely used tax-saving provision in the Income Tax Act, allowing a maximum deduction of ₹1,50,000 (₹1.5 lakh) per financial year from your gross income. Qualifying investments include EPF (employer PF deduction automatically counts), PPF (Public Provident Fund), ELSS mutual funds (3-year lock-in), NSC, 5-year tax-saving FD, SCSS, SSY, life insurance premiums for self/spouse/children, home loan principal repayment, and children&apos;s tuition fees for up to two children. The ₹1.5 lakh limit is the combined cap across all 80C instruments — you cannot claim more than ₹1.5 lakh total even if your investments exceed that amount. Section 80C is available only under the old tax regime; those in the new regime cannot claim 80C deductions.",
+        },
+      ]} />
     </div>
   );
 }

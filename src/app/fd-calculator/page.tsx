@@ -134,7 +134,74 @@ export default function FDCalculatorPage() {
         </section>
       </div>
 
-      <FAQSection items={faqs} />
+      <div className="mt-6 space-y-6">
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">What is a Fixed Deposit — Complete Guide</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            A Fixed Deposit is a financial instrument offered by banks and non-banking financial companies (NBFCs) in India where you deposit a sum of money for a predetermined period at an agreed interest rate. Unlike a savings account where your balance fluctuates and the interest rate can change at any time, an FD locks in both your principal and the interest rate for the full tenure. When you open an FD, you receive a Fixed Deposit Receipt (FDR) that specifies the principal amount, interest rate, maturity date, and the maturity amount — every number is guaranteed from day one. This certainty is the primary reason fixed deposits remain one of the most popular investment instruments in India despite the availability of higher-return alternatives.
+          </p>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            Indian banks offer FDs across a wide range of tenures — from as short as 7 days to as long as 10 years. Interest rates generally increase with tenure up to a point (typically 1–3 years) and then plateau or slightly decline for very long tenures. Small Finance Banks (SFBs) like AU Small Finance Bank, Equitas, Ujjivan, and ESAF offer significantly higher rates than large PSU and private sector banks — sometimes 1.5–2.5% higher — because they are trying to attract deposits. These higher-rate SFB deposits are also covered by DICGC insurance up to ₹5 lakh per depositor, making them a genuinely good option for investors comfortable with slightly less brand recognition in exchange for higher guaranteed returns.
+          </p>
+          <p className="text-sm leading-relaxed text-gray-600">
+            The compounding frequency of an FD significantly affects the actual return you receive. Most Indian banks compound FD interest quarterly, meaning interest is added to your principal four times a year. Some banks offer monthly compounding for certain deposit types. The more frequently interest compounds, the higher your effective annual return — even at the same stated annual rate. For a ₹5 lakh FD at 7.5% for 5 years, the difference between annual and quarterly compounding is approximately ₹4,000 in total maturity value. While this may seem small, it illustrates why comparing FDs on their stated annual rate alone is insufficient — always calculate the effective annual yield (EAR) which accounts for compounding frequency before comparing deposits across different banks.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">Best FD Interest Rates in India 2026</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            FD interest rates in India are closely linked to the RBI repo rate, which is the rate at which the Reserve Bank of India lends money to commercial banks. When the RBI raises the repo rate to control inflation, banks raise their FD rates to attract deposits; when the RBI cuts rates to stimulate the economy, FD rates typically decline within a few months. As of 2026, major PSU banks like SBI, Bank of Baroda, and PNB offer FD rates in the range of 6.5–7.25% for general customers and 7–7.75% for senior citizens across tenures of 1–5 years. Private sector banks like HDFC, ICICI, Axis, and Kotak offer broadly similar rates, typically 0.1–0.25% higher than SBI for comparable tenures.
+          </p>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            Small Finance Banks (SFBs) offer the most competitive FD rates in the country, often 1–2% above the major bank rates. AU Small Finance Bank, Equitas Small Finance Bank, Ujjivan Small Finance Bank, and Jana Small Finance Bank regularly offer rates of 8–9% for specific tenures, with special rates for senior citizens going even higher. These deposits are just as safe as major bank FDs up to the DICGC insured limit of ₹5 lakh per depositor per bank. For investors with FD amounts below ₹5 lakh who prioritise maximum guaranteed return, allocating a portion of their FD corpus to one or two SFBs is a prudent and financially sound strategy.
+          </p>
+          <p className="text-sm leading-relaxed text-gray-600">
+            When comparing FD rates across banks, it is important to look beyond the headline annual rate. Consider the TDS threshold (₹40,000/year for general customers, ₹50,000 for senior citizens), early withdrawal penalty (typically 1% on applicable rate for the completed tenure), auto-renewal policy (some banks silently auto-renew at prevailing rates which may be lower), and whether the bank offers an overdraft facility against the FD if you need liquidity without breaking the deposit. The best FD is not simply the one with the highest rate — it is the one that gives you the best combination of rate, safety, flexibility, and service quality relative to your specific financial needs.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">Tax on FD Interest — What You Must Know</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            FD interest is fully taxable in India under the head &quot;Income from Other Sources&quot; in your Income Tax Return. It is added to your total income for the financial year and taxed at your applicable income tax slab rate. This means a person in the 30% tax bracket who earns ₹1 lakh in FD interest will pay ₹30,000 in tax on it, leaving an effective post-tax return of just 4.9% on a 7% FD. Contrast this with equity mutual fund Long Term Capital Gains, which are taxed at only 12.5% — and the structural tax disadvantage of FDs for high-income earners becomes clear. For investors in the 5% or 10% tax slab, the tax impact on FD returns is minimal and FDs remain a genuinely good investment. For those in the 20–30% slab, the post-tax FD return is significantly lower than the stated rate.
+          </p>
+          <p className="text-sm leading-relaxed text-gray-600">
+            Banks deduct TDS (Tax Deducted at Source) at 10% on FD interest when the total interest credited by a single bank in a financial year exceeds ₹40,000 (₹50,000 for senior citizens). This TDS is not the final tax — it is an advance payment. If your actual tax rate is higher than 10%, you must pay the difference when filing your ITR. If your total income is below the taxable threshold, you can submit Form 15G (for individuals below 60) or Form 15H (for senior citizens) to your bank at the start of each financial year to instruct them not to deduct TDS. Many FD investors forget to submit these forms annually and unnecessarily lose cash to TDS that they later have to claim as a refund. Note that even if no TDS is deducted (because you submitted Form 15G/15H), you are still legally required to declare the interest income in your ITR.
+          </p>
+        </section>
+
+      </div>
+
+      <div className="mt-6">
+        <FAQSection items={[
+          {
+            question: "Is FD interest taxable in India?",
+            answer: "Yes, FD interest is fully taxable in India every financial year, regardless of whether it is paid out or compounded. It is added to your total income and taxed at your applicable income tax slab rate — 5%, 10%, 20%, or 30% depending on your total income. Banks deduct TDS at 10% when annual interest from a single bank exceeds ₹40,000. If your actual slab rate is higher than 10%, you must pay the difference when filing ITR. If your total income is below the taxable threshold, submit Form 15G (under 60) or Form 15H (senior citizens) to your bank to avoid TDS deduction. Tax-saving FDs under Section 80C exempt the principal from tax but not the interest earned.",
+          },
+          {
+            question: "What is the maximum DICGC insurance on FD?",
+            answer: "The Deposit Insurance and Credit Guarantee Corporation (DICGC) insures bank deposits up to ₹5 lakh per depositor per bank. This ₹5 lakh limit covers the total of all your deposits at a single bank — current account, savings account, FDs, and RDs combined. If you have ₹3 lakh in FDs and ₹2 lakh in a savings account at the same bank, your total covered amount is ₹5 lakh. Amounts above ₹5 lakh are not insured. To protect larger amounts, spread your FDs across multiple banks so that no single bank holds more than ₹5 lakh of your deposits. This insurance applies to all scheduled commercial banks including Small Finance Banks and cooperative banks registered with DICGC.",
+          },
+          {
+            question: "Can I break an FD before maturity?",
+            answer: "Yes, most bank FDs can be broken before maturity, but a premature withdrawal penalty applies — typically 0.5% to 1% subtracted from the interest rate applicable for the period the deposit was held. For example, if you open a 3-year FD at 7.5% and break it after 1 year, the bank applies the 1-year rate (say 6.8%) minus the penalty (say 1%) = 5.8% effective rate for your actual holding period. Tax-saving FDs (5-year FDs under Section 80C) cannot be broken before 5 years — premature withdrawal is not permitted. As an alternative to breaking your FD, most banks offer an overdraft or loan facility against the FD at a slightly higher rate than the FD rate, allowing you to access funds without losing the interest benefit.",
+          },
+          {
+            question: "What is the difference between cumulative and non-cumulative FD?",
+            answer: "A cumulative FD reinvests the interest back into the principal — you do not receive periodic interest payments, but at maturity you receive the full compounded amount. This is ideal for wealth accumulation goals where you don&apos;t need regular income from the FD. A non-cumulative FD pays out interest periodically — monthly, quarterly, half-yearly, or annually — directly to your bank account. This is suited for retirees or anyone who needs regular income from their savings. Cumulative FDs always earn more than non-cumulative because of compounding — even at the same stated annual rate, the maturity value is higher when interest is reinvested rather than paid out.",
+          },
+          {
+            question: "Which bank gives the highest FD interest rate in India?",
+            answer: "Small Finance Banks consistently offer the highest FD rates in India. As of 2026, banks like AU Small Finance Bank, Equitas Small Finance Bank, Ujjivan Small Finance Bank, Jana Small Finance Bank, and ESAF Small Finance Bank offer rates ranging from 8% to 9.5% for specific tenures, with additional 0.25–0.75% for senior citizens. These rates are 1.5–2.5% higher than major PSU and private banks. Small Finance Bank deposits are insured by DICGC up to ₹5 lakh — the same as major banks — making them safe for deposits within that limit. Always verify rates directly on the bank&apos;s official website, as FD rates change frequently.",
+          },
+          {
+            question: "Should I invest in FD or mutual fund?",
+            answer: "The right choice depends on your investment horizon and risk tolerance. For goals within 1–3 years or for your emergency fund, FD is better — it guarantees your capital and the returns are predictable. For goals 5 or more years away (retirement, children&apos;s education, property purchase), equity mutual funds through SIP have historically delivered significantly higher returns (12–14% vs 7–7.5%) and are more tax-efficient at higher income levels. The optimal strategy for most Indian investors is to hold 3–6 months of expenses in FDs as emergency reserves, and invest all longer-term savings in equity or hybrid mutual funds. Do not use FDs for long-term wealth creation if you are in the 20–30% tax bracket — the post-tax real return after inflation is near zero.",
+          },
+        ]} />
+      </div>
     </div>
   );
 }

@@ -136,7 +136,77 @@ export default function EMICalculatorPage() {
         </section>
       </div>
 
-      <FAQSection items={faqs} />
+      <div className="mt-6 space-y-6">
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">What is EMI?</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            EMI stands for Equated Monthly Instalment — the fixed amount you pay to a lender every month until your loan is completely repaid. The word &quot;equated&quot; is the key: every month, you pay the same total amount, but the split between principal and interest changes. In the early months, a much larger portion of your EMI goes toward paying interest, while only a small fraction reduces your actual loan balance. Over time, as the outstanding principal falls, the interest portion shrinks and the principal repayment portion grows. This system, called an amortizing loan structure, is used universally across home loans, car loans, personal loans, and business loans in India.
+          </p>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            Understanding how EMI works is important because the numbers can be surprising. On a ₹30 lakh home loan at 8.5% for 20 years, you pay ₹26,035 every month. That seems manageable — but over 20 years, you will have paid ₹62.5 lakh in total. You borrowed ₹30 lakh and repaid ₹62.5 lakh — the extra ₹32.5 lakh is the cost of borrowing, paid as interest. This is not unusual or unfair — it is simply how time-value of money works over a long loan tenure. The critical insight is that even small changes in interest rate or tenure cause large changes in the total amount you ultimately pay.
+          </p>
+          <p className="text-sm leading-relaxed text-gray-600">
+            Every Indian taking a loan — whether for a home, a car, a consumer durable, or personal expenses — should calculate the EMI before signing any agreement. Knowing your EMI helps you verify that it falls within your monthly budget, ensures you are not over-leveraging relative to your income, and allows you to compare loan offers from different banks on an equal footing. Most importantly, it helps you understand the real cost of your loan, not just the headline interest rate. The RupeeMath EMI calculator does this calculation instantly and also shows you a full amortisation schedule so you can see exactly how much of each instalment reduces your outstanding principal versus how much goes to the bank as interest.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">Factors That Affect Your EMI</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            The loan amount is the most obvious driver of your EMI — the more you borrow, the higher the monthly payment. But the relationship is linear, which makes it straightforward to plan around. If borrowing ₹30 lakh gives you an EMI of ₹26,035, then ₹25 lakh would give you approximately ₹21,700 and ₹35 lakh would be approximately ₹30,400, at the same rate and tenure. Reducing the loan amount through a larger down payment is one of the most effective ways to bring your EMI to a comfortable level, and unlike rate negotiations, it is completely within your control.
+          </p>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            The interest rate has a non-linear but highly significant impact on your EMI. Because interest compounds over the entire tenure of the loan, even a small difference in rate translates into a large difference in total outgo. On a ₹30 lakh loan for 20 years, the difference between 8.5% and 9% is only ₹957 per month — but over 20 years, that small monthly difference adds up to ₹2.3 lakh in extra total interest. A 1% rate difference adds approximately ₹4.6 lakh to the total cost of the same loan. This is why negotiating even 0.25% off your rate, or finding a lender with a lower spread over the repo rate, is genuinely worth the effort before signing.
+          </p>
+          <p className="text-sm leading-relaxed text-gray-600">
+            The loan tenure is the most flexible lever you can adjust to manage your monthly cash flow. A longer tenure reduces your monthly EMI significantly — but at the cost of paying much more total interest. A ₹30 lakh home loan at 8.5% costs ₹37,109/month for 10 years versus ₹26,035/month for 20 years — a monthly saving of ₹11,074. However, over 20 years you pay ₹62.5 lakh in total versus ₹44.5 lakh over 10 years — ₹18 lakh more in interest for the longer tenure. The right tenure depends on your income stability, age, and how much you value current cash flow versus long-term savings. A practical approach is to choose the shortest tenure your budget can comfortably support and make annual prepayments when you have surplus funds.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">Tips to Reduce Your Home Loan EMI</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            Making a higher down payment is the most straightforward way to reduce your EMI without any dependence on bank negotiations or interest rate movements. Banks in India lend up to 75–80% of the property value (LTV ratio), which means you must arrange at least 20–25% from your own savings. But going beyond the minimum — say 30–35% — directly reduces the loan principal, which proportionally reduces your EMI. Every extra rupee you invest as a down payment saves you more than any fixed deposit or savings account can earn, because you avoid paying loan interest (8.5%) on that amount for the entire tenure. If you are expecting a bonus or a matured investment shortly, it may be worth waiting a few months to apply with a larger down payment rather than rushing with a higher loan amount.
+          </p>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            Improving your CIBIL score before applying can unlock a materially lower interest rate from most banks. The difference between a score of 700 and 750 can result in a 0.1–0.25% lower rate at PSU banks and 0.25–0.5% lower at some private banks. Over a 20-year loan of ₹30 lakh, each 0.25% reduction saves approximately ₹90,000 in total interest. Building your score to 750+ requires 6–12 months of clean payment history on all existing obligations, keeping credit card utilisation below 30%, and avoiding new loan applications before you apply for the home loan. Since home loans are long-term commitments, spending a few extra months improving your credit score before applying is almost always worth the financial benefit it delivers.
+          </p>
+          <p className="text-sm leading-relaxed text-gray-600">
+            Making periodic prepayments during the loan tenure is one of the most powerful strategies to reduce the effective cost and duration of your loan. Every rupee you pay beyond the mandatory EMI directly reduces your outstanding principal, which in turn reduces the interest charged in all subsequent months. A single lump-sum prepayment of ₹1 lakh in year 3 of a ₹30 lakh, 8.5%, 20-year loan saves approximately ₹2–2.5 lakh in total interest and shortens the tenure by nearly 2 years. For floating rate home loans, the RBI has mandated zero prepayment penalties — so there is no financial disincentive to paying more whenever you can. Even directing your annual salary increment toward an increased EMI by 5–10% each year can dramatically reduce your total interest burden over a 20-year loan.
+          </p>
+        </section>
+
+      </div>
+
+      <div className="mt-6">
+        <FAQSection items={[
+          {
+            question: "What is the difference between flat rate and reducing balance rate?",
+            answer: "A flat rate calculates interest on the original loan amount for the entire tenure — for example, 10% flat on ₹10 lakh for 3 years means interest = ₹3 lakh regardless of how much principal you have repaid. This results in a much higher effective annual rate than the stated flat rate. A reducing balance rate (used by all Indian banks for home and car loans) calculates interest only on the outstanding principal at the start of each month. As you repay principal, your interest charge reduces each month. The reducing balance method is significantly more borrower-friendly. A 10% flat rate is roughly equivalent to an 18–20% reducing balance rate — which is why flat-rate personal loans appear cheaper on the surface but cost more in reality.",
+          },
+          {
+            question: "Can I change my EMI amount after taking a loan?",
+            answer: "Yes, though the process varies by loan type and bank. For home loans on floating rates, you can request an EMI revision at any time — banks typically allow you to increase the EMI to reduce tenure, or reduce the EMI (with a revised tenure) if you face financial difficulty. Some banks automatically adjust the EMI when interest rates change; others adjust the tenure instead. For fixed-rate loans, changing the EMI is harder and may involve foreclosure and re-borrowing. The best approach is to start with an EMI you can comfortably afford, then voluntarily increase it annually as your income grows — effectively acting like a step-up loan without formally changing the terms.",
+          },
+          {
+            question: "What happens if I miss an EMI payment?",
+            answer: "Missing an EMI payment has both financial and credit consequences. Financially, the bank charges a late payment penalty — typically 2% per month on the overdue amount — and the missed instalment accrues interest. If you miss multiple EMIs, the loan may be classified as an NPA (Non-Performing Asset) after 90 days of non-payment, at which point the bank has the legal right to initiate recovery proceedings. From a credit perspective, a single missed EMI is reported to CIBIL within 30 days and can drop your credit score by 50–100 points, making future borrowing more expensive. If you anticipate difficulty paying an EMI, contact your bank proactively — most lenders offer restructuring or moratorium options that are far less damaging than a default.",
+          },
+          {
+            question: "Is it better to choose a shorter or longer tenure?",
+            answer: "The answer depends on your monthly budget and financial priorities. A shorter tenure means a higher EMI but dramatically less total interest — a ₹30 lakh loan at 8.5% for 10 years saves ₹18 lakh in interest compared to 20 years. A longer tenure reduces the monthly burden, making the loan more affordable relative to your income, and frees up cash for other investments. The practical guideline is: choose the shortest tenure where the EMI remains comfortably within 40–45% of your net monthly income. If you choose a longer tenure, commit to making annual prepayments from your salary increments or bonuses to effectively reduce the tenure over time without the obligation of a higher fixed EMI.",
+          },
+          {
+            question: "How does prepayment affect my EMI?",
+            answer: "When you make a prepayment, most banks give you two options: either maintain the same EMI and reduce the outstanding tenure (you finish the loan faster), or maintain the same tenure and reduce the EMI (your monthly payment becomes lower). Reducing the tenure is almost always the better financial choice — it reduces the total interest you pay by a larger amount than reducing the EMI does. For example, prepaying ₹2 lakh on a ₹30 lakh, 8.5%, 20-year loan in year 3 can save ₹4.5 lakh in interest and cut 2 years off your tenure if you choose the tenure-reduction option. The same prepayment used to reduce EMI saves less total interest because the loan continues for the full 20 years.",
+          },
+          {
+            question: "Which banks offer the lowest home loan EMI in India?",
+            answer: "The lowest home loan EMIs come from the banks with the lowest interest rates, since EMI is directly driven by rate. As of 2026, PSU banks like SBI, Bank of Baroda, PNB, and Canara Bank typically offer the most competitive starting rates (8.25–8.5%) for salaried borrowers with CIBIL scores above 750. Private banks like HDFC, ICICI, Kotak, and Axis are competitive on rates and offer faster processing, often with rates in the 8.5–8.75% range. Housing Finance Companies like LIC Housing Finance and PNB Housing Finance are excellent for self-employed borrowers. The most important step is to compare the actual sanction letter from at least 3–4 banks before signing, as the rate applied to your specific profile can vary by 0.25–0.5% even among the same type of lender.",
+          },
+        ]} />
+      </div>
     </div>
   );
 }
