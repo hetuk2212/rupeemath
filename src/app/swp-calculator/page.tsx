@@ -72,6 +72,32 @@ export default function SWPPage() {
           </div>
         </section>
       </div>
+      <div className="mt-6 space-y-6">
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">SWP Formula and Calculation Method</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            SWP calculation works month-by-month. The corpus earns a return each month and a fixed withdrawal is redeemed. The remaining balance after each withdrawal forms the corpus for the next month.
+          </p>
+          <div className="space-y-3 text-sm">
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Monthly SWP Corpus Formula</p>
+              <p className="font-mono text-sm text-primary mb-2">Balance(n) = Balance(n−1) × (1 + r/12) − W</p>
+              <p className="text-xs text-gray-600">Where: Balance(n) = Corpus after month n, r = Annual return rate, W = Fixed monthly withdrawal amount. This is iterated for each month of the tenure.</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Breakeven Withdrawal Rate</p>
+              <p className="text-xs text-gray-600">The corpus sustains indefinitely when the monthly return exactly equals the monthly withdrawal. At 10% annual return: monthly growth = corpus × 0.833%. A ₹50 lakh corpus earns ₹41,667/month — withdrawing more than this eventually depletes the corpus. The safe withdrawal rate rule: keep monthly withdrawals below 0.7–0.8% of corpus to account for market volatility and inflation.</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Example (₹50L corpus · ₹35,000/month · 10% return · 20 years)</p>
+              <p className="text-xs text-gray-600">Monthly return: ~0.833% × ₹50L = ₹41,667. Monthly net after withdrawal: +₹6,667. Corpus grows initially, then gradually declines. Remaining corpus after 20 years: approximately ₹62.5 lakh — corpus actually grows due to returns exceeding withdrawals.</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-gray-400">
+            Tax note: For equity mutual funds (held 1+ year), only the capital gains portion of each SWP redemption is taxed at 12.5% LTCG. The principal portion is returned tax-free — making SWP far more tax-efficient than FD interest income.
+          </p>
+        </section>
+      </div>
       <FAQSection items={faqs} />
     </div>
   );

@@ -71,6 +71,35 @@ export default function SalaryPage() {
           </div>
         </section>
       </div>
+      <div className="mt-6 space-y-6">
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">Salary Formula and Calculation Method</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            The CTC-to-in-hand calculation follows a standard deduction waterfall used by most Indian employers. Here is how each component is computed:
+          </p>
+          <div className="space-y-3 text-sm">
+            {[
+              { label: "Gross Monthly Salary", formula: "CTC ÷ 12", note: "Annual CTC divided by 12 months. Includes basic, HRA, and all allowances." },
+              { label: "Basic Salary", formula: "50% × Gross Monthly", note: "Industry standard. Your payslip may use 40–60% depending on employer policy." },
+              { label: "Employee PF (EPF)", formula: "12% × Basic Salary", note: "Mandatory if basic salary ≤ ₹15,000. Optional above threshold but most companies deduct it." },
+              { label: "Professional Tax", formula: "₹150–₹200 / month (state-dependent)", note: "Maharashtra, Karnataka, WB deduct this. Delhi, UP, Rajasthan do not levy PT." },
+              { label: "Income Tax (TDS)", formula: "Based on applicable slab after standard deduction (₹50K old / ₹75K new)", note: "Divided by 12 and deducted monthly. Varies with investments declared via Form 12BB." },
+              { label: "Net In-Hand Salary", formula: "Gross − EPF − PT − TDS", note: "Amount credited to your bank account every month." },
+            ].map((row) => (
+              <div key={row.label} className="rounded-lg border border-border bg-white p-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-semibold text-gray-800">{row.label}</span>
+                  <span className="font-mono text-xs font-bold text-primary">= {row.formula}</span>
+                </div>
+                <p className="mt-1 text-xs text-gray-500">{row.note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-gray-400">
+            Example: CTC ₹12L → Gross ₹1,00,000/mo → Basic ₹50,000 → EPF ₹6,000 → PT ₹200 → TDS ~₹4,000 → <strong>In-hand ~₹89,800/mo</strong> (new regime, no investments).
+          </p>
+        </section>
+      </div>
       <FAQSection items={faqs} />
     </div>
   );

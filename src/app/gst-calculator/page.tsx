@@ -71,6 +71,35 @@ export default function GSTPage() {
           </div>
         </section>
       </div>
+      <div className="mt-6 space-y-6">
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">GST Formula and Calculation Method</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            GST calculations are straightforward but differ depending on whether you are adding GST to a base price or extracting it from a GST-inclusive amount. Here are both formulas:
+          </p>
+          <div className="space-y-3 text-sm">
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Adding GST to Base Price</p>
+              <p className="font-mono text-sm text-primary mb-1">GST Amount = Base Price × (GST Rate ÷ 100)</p>
+              <p className="font-mono text-sm text-primary mb-2">Final Price = Base Price + GST Amount</p>
+              <p className="text-xs text-gray-600">Example: ₹1,000 base + 18% GST → GST = ₹180 (CGST ₹90 + SGST ₹90) → Final = ₹1,180</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Extracting GST from Inclusive Price (Reverse Calculation)</p>
+              <p className="font-mono text-sm text-primary mb-1">Base Price = Inclusive Price ÷ (1 + GST Rate ÷ 100)</p>
+              <p className="font-mono text-sm text-primary mb-2">GST Amount = Inclusive Price − Base Price</p>
+              <p className="text-xs text-gray-600">Example: ₹1,180 inclusive (18% GST) → Base = ₹1,180 ÷ 1.18 = ₹1,000 → GST = ₹180</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">CGST and SGST Split</p>
+              <p className="text-xs text-gray-600">For intrastate transactions: CGST = SGST = Total GST ÷ 2. For 18% GST: CGST = 9%, SGST = 9%. For interstate transactions: IGST = full GST rate applied (no split). IGST is collected by the Centre and later apportioned to the destination state.</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-gray-400">
+            Always verify the applicable GST rate for your specific product or service using the HSN (Harmonised System of Nomenclature) code on the GST portal before invoicing.
+          </p>
+        </section>
+      </div>
       <FAQSection items={faqs} />
     </div>
   );

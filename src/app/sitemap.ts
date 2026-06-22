@@ -26,7 +26,6 @@ const calcPages = [
   "/blog/new-vs-old-tax-regime-2026",
   "/blog/how-to-improve-cibil-score",
   "/blog/home-loan-documents-required",
-  "/home-loan-for-30000-salary",
   "/emi-20-lakh-home-loan",
   "/emi-50-lakh-home-loan",
   "/joint-home-loan-eligibility",

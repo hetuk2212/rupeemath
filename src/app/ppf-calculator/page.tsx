@@ -69,6 +69,32 @@ export default function PPFPage() {
           </div>
         </section>
       </div>
+      <div className="mt-6 space-y-6">
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">PPF Formula and Calculation Method</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            PPF interest is compounded annually and credited to your account at the end of each financial year (March 31). The key rules that affect the calculation:
+          </p>
+          <div className="space-y-3 text-sm">
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">PPF Maturity Formula</p>
+              <p className="font-mono text-sm text-primary mb-2">M = P × [((1+r)^n − 1) ÷ r] × (1+r)</p>
+              <p className="text-xs text-gray-600">Where: M = Maturity amount, P = Annual investment, r = Annual interest rate (e.g. 0.071 for 7.1%), n = Number of years</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Monthly to Annual Deposits</p>
+              <p className="text-xs text-gray-600">If you invest monthly, deposits made between April 1–5 earn interest for the full month. Deposits made after the 5th of any month earn interest only from the following month. <strong>Always invest before the 5th</strong> to maximise interest for that month.</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Example Calculation (₹1,50,000/year · 7.1% · 15 years)</p>
+              <p className="text-xs text-gray-600">Total invested: ₹22,50,000 · Maturity amount: ₹40,68,209 · Interest earned: ₹18,18,209 (fully tax-free)</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-gray-400">
+            The maximum benefit: invest ₹1,50,000 on April 5 every year (not monthly) to earn interest on the full ₹1.5 lakh for all 12 months of the year.
+          </p>
+        </section>
+      </div>
       <FAQSection items={faqs} />
     </div>
   );

@@ -111,6 +111,58 @@ export default function BlogPage() {
         ))}
       </div>
 
+      {/* Editorial intro */}
+      <div className="mt-10 space-y-6 text-sm leading-relaxed text-gray-700">
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">Personal Finance Guides for Every Indian</h2>
+          <p className="mb-3 text-gray-600">
+            Managing money in India comes with its own set of complexities — dual income tax regimes, FOIR-based home loan eligibility, repo-rate-linked floating interest, PMAY subsidies, and a mutual fund landscape that grows more diverse every year. Our guides are written specifically for Indian investors, borrowers, and salaried employees who want practical, accurate information without jargon.
+          </p>
+          <p className="text-gray-600">
+            Every article on RupeeMath is grounded in current Indian law, RBI guidelines, and real-world examples using Indian rupee amounts. We cover home loans, SIP returns, income tax regimes, CIBIL scores, and the documents every borrower needs — the topics that actually affect your financial decisions in 2026.
+          </p>
+        </section>
+
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">What You Will Learn from Our Finance Guides</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                topic: "Home Loans",
+                desc: "How banks determine your eligibility, which documents you need, how to negotiate the interest rate spread, and when to do a balance transfer. We cover PMAY subsidies, FOIR calculations, and co-applicant strategies.",
+              },
+              {
+                topic: "Mutual Fund SIP",
+                desc: "Why SIP beats FD over 10+ years, how rupee-cost averaging works through market cycles, the difference between flat and step-up SIPs, and how LTCG tax makes equity far more efficient than FD interest for high earners.",
+              },
+              {
+                topic: "Income Tax",
+                desc: "A clear breakdown of the new vs old tax regime — which saves more and for whom, all major deductions (80C, 80D, 24(b), HRA, NPS), how to compute TDS, and how to use Form 16 and ITR effectively.",
+              },
+              {
+                topic: "CIBIL Score & Credit",
+                desc: "The five factors that build and damage your CIBIL score, why 750+ is the target number, practical timelines for improvement, and how to dispute errors in your credit report for quick score recovery.",
+              },
+            ].map((item) => (
+              <div key={item.topic} className="rounded-lg border border-border bg-white p-4">
+                <p className="mb-1 font-bold text-primary">{item.topic}</p>
+                <p className="text-xs leading-relaxed text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">How to Get the Most from RupeeMath</h2>
+          <p className="mb-3 text-gray-600">
+            Our guides are designed to work in tandem with our free calculators. Read an article first to understand the concept — then open the corresponding calculator and test the numbers with your own salary, loan amount, or investment. This combination of understanding and personalised calculation helps you make better-informed decisions faster.
+          </p>
+          <p className="text-gray-600">
+            For example, after reading the <strong>New vs Old Tax Regime</strong> guide, open the Income Tax Calculator and enter your exact CTC and deductions to see which regime saves you the most — down to the rupee. Similarly, reading the <strong>Home Loan Tips</strong> article and then running the Home Loan Eligibility Calculator gives you both the strategy and the specific numbers you need before walking into a bank.
+          </p>
+        </section>
+      </div>
+
       <div className="mt-12 rounded-xl border border-border bg-orange-50 p-6 text-center">
         <BookOpen className="mx-auto mb-3 h-8 w-8 text-primary" />
         <h2 className="mb-1 text-base font-bold text-gray-900">

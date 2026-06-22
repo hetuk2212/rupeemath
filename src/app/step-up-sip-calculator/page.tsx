@@ -73,6 +73,32 @@ export default function StepUpSIPPage() {
           </div>
         </section>
       </div>
+      <div className="mt-6 space-y-6">
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">Step-Up SIP Formula and Calculation Method</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            A Step-Up SIP compounds in two dimensions: the monthly investment amount grows annually, and all investments compound continuously. The calculation requires year-by-year SIP periods to be summed:
+          </p>
+          <div className="space-y-3 text-sm">
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Step-Up SIP Annual Investment</p>
+              <p className="font-mono text-sm text-primary mb-2">P(y) = P(1) × (1 + g)^(y−1)</p>
+              <p className="text-xs text-gray-600">Where: P(y) = Monthly SIP in year y, P(1) = Initial monthly SIP, g = Annual step-up rate (e.g. 0.10 for 10%). Year 1: P(1), Year 2: P(1)×1.1, Year 3: P(1)×1.21, and so on.</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Total Corpus = Sum of Year-wise SIP Maturity Values</p>
+              <p className="text-xs text-gray-600">For each year y with monthly SIP P(y), calculate the FV of 12 monthly investments compounding at the expected return for the remaining (n−y) years. Sum all these FV values across all years. The calculator does this automatically — there is no single closed-form formula for step-up SIP.</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Example (₹10,000 start · 10% step-up · 12% return · 20 years)</p>
+              <p className="text-xs text-gray-600">Year 1 SIP: ₹10,000/mo · Year 5 SIP: ₹14,641/mo · Year 10 SIP: ₹23,579/mo · Year 20 SIP: ₹61,159/mo · Total invested: ₹57.3L · Maturity: ₹2.06 crore</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-gray-400">
+            The step-up effect is multiplicative, not additive — a 10% step-up for 20 years doesn&apos;t double your corpus, it increases it 2× to 3× compared to a flat SIP, depending on the return rate and tenure.
+          </p>
+        </section>
+      </div>
       <FAQSection items={faqs} />
     </div>
   );

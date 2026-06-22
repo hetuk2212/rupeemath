@@ -74,6 +74,32 @@ export default function RDPage() {
           </div>
         </section>
       </div>
+      <div className="mt-6 space-y-6">
+        <section className="rounded-xl border border-border bg-gray-50 p-6">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">RD Formula and Calculation Method</h2>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            Indian banks calculate RD maturity using quarterly compounding. Each monthly deposit is treated independently as a mini-FD. Here is the formula and step-by-step method:
+          </p>
+          <div className="space-y-3 text-sm">
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">RD Maturity Formula (each deposit)</p>
+              <p className="font-mono text-sm text-primary mb-2">A = P × (1 + r/400)^(4t)</p>
+              <p className="text-xs text-gray-600">Where: A = Maturity value of one deposit, P = Monthly deposit amount, r = Annual interest rate (%), t = Remaining tenure in years for that specific deposit</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Total Maturity Amount</p>
+              <p className="text-xs text-gray-600">Total maturity = Sum of all n individual deposit maturity values, where the first deposit earns interest for the full n months and the last deposit earns for 1 month only. This is why RD maturity is always higher than simple interest on the total deposited amount.</p>
+            </div>
+            <div className="rounded-lg border border-border bg-white p-4">
+              <p className="font-semibold text-gray-800 mb-1">Example (₹5,000/month · 7% · 2 years)</p>
+              <p className="text-xs text-gray-600">Total deposited: ₹1,20,000 · Quarterly compounding adds ≈ ₹9,020 in interest · Maturity amount: ≈ ₹1,29,020</p>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-gray-400">
+            Post Office RD uses the same quarterly compounding formula at 6.7% (as of FY 2025-26) with a fixed 5-year tenure. Bank RD rates are bank-specific and updated periodically.
+          </p>
+        </section>
+      </div>
       <FAQSection items={faqs} />
     </div>
   );
