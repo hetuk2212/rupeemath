@@ -31,6 +31,7 @@ const calcPages = [
   "/joint-home-loan-eligibility",
   "/ai-advisor",
   "/itr-calculator",
+  "/home-loan-amount-eligibility",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
