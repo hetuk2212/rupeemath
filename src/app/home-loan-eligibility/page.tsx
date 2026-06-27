@@ -402,6 +402,13 @@ export default function HomeLoanPage() {
             <span className="ml-2">→</span>
           </Link>
           <Link
+            href="/home-loan-amount-eligibility"
+            className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-orange-50"
+          >
+            Maximum loan amount guide
+            <span className="ml-2">→</span>
+          </Link>
+          <Link
             href="/joint-home-loan-eligibility"
             className="flex items-center justify-between rounded-lg border border-border bg-white px-4 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-orange-50"
           >

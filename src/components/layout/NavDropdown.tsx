@@ -27,6 +27,7 @@ const groups = [
     label: "Tax & Salary",
     items: [
       { label: "Income Tax Calculator", href: "/income-tax-calculator" },
+      { label: "ITR Calculator", href: "/itr-calculator" },
       { label: "HRA Calculator", href: "/hra-calculator" },
       { label: "Salary / CTC Calculator", href: "/salary-calculator" },
       { label: "Gratuity Calculator", href: "/gratuity-calculator" },

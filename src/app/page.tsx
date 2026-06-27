@@ -41,6 +41,7 @@ const groups = [
       { title: "Salary / CTC Calculator", desc: "CTC to monthly in-hand salary breakdown.", href: "/salary-calculator", icon: FileText, badge: null },
       { title: "Gratuity Calculator", desc: "Gratuity amount and tax exemption under the Act.", href: "/gratuity-calculator", icon: Receipt, badge: null },
       { title: "GST Calculator", desc: "Add or extract GST with CGST & SGST split.", href: "/gst-calculator", icon: Receipt, badge: null },
+      { title: "ITR Calculator", desc: "Calculate income tax return amount for FY 2025-26.", href: "/itr-calculator", icon: Calculator, badge: null },
     ],
   },
 ];
@@ -75,7 +76,7 @@ export default function HomePage() {
             Calculator
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-navy-300">
-            13 free tools for EMI, SIP, Tax, PPF & more. No sign‑up. No ads. Download PDF reports.
+            13 free tools for EMI, SIP, Tax, PPF &amp; more. No sign‑up required. Instant results. Download PDF reports.
           </p>
           <Link
             href="/sip-calculator"
@@ -180,8 +181,66 @@ export default function HomePage() {
         ))}
       </section>
 
-      {/* Why Choose RupeeMath */}
+      {/* About RupeeMath */}
       <section className="border-t border-border bg-white px-4 py-14">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-6 text-xl font-black text-gray-900">
+            About <span className="text-primary">RupeeMath</span> Financial Calculators
+          </h2>
+          <div className="space-y-5 text-sm leading-relaxed text-gray-600">
+            <p>
+              RupeeMath is a free financial calculator platform built specifically for Indian investors,
+              salaried employees, and home loan borrowers. Our mission is simple: give every Indian access
+              to the same accurate, formula-driven financial calculations that banks and financial advisors
+              use — without requiring a signup, a subscription, or any personal information. Every
+              calculator on RupeeMath is updated to reflect current Indian tax slabs, RBI guidelines, and
+              banking norms so you can trust the numbers you see before making important financial
+              decisions.
+            </p>
+            <p>
+              The EMI calculator on RupeeMath uses the standard reducing balance formula used by every
+              scheduled bank and NBFC in India — the same formula that determines your home loan, car
+              loan, and personal loan monthly instalment. Unlike simple interest calculators that show
+              misleading numbers, our EMI tool correctly computes the declining principal, the interest
+              component of each instalment, and the total interest outgo over the full loan tenure. You
+              can see a complete amortisation schedule and compare how your total cost changes across
+              different interest rates and tenures — helping you negotiate better with your bank before
+              signing any loan agreement.
+            </p>
+            <p>
+              The SIP calculator helps Indians understand the most powerful force in personal finance:
+              compounding. By investing a fixed amount in a mutual fund every month, your money works
+              harder over time — early investments compound for decades while later investments benefit
+              from the growing corpus they join. Our calculator shows the year-by-year growth of your SIP
+              corpus and highlights the wealth gap between starting at 25 versus 35. Whether you are
+              planning for retirement, your child&apos;s education, or a home purchase ten years from now,
+              the SIP calculator makes the case for starting — and staying invested — with real numbers.
+            </p>
+            <p>
+              The income tax calculator is one of the most used tools on RupeeMath, especially during the
+              ITR filing season. It computes your exact tax liability under both the old tax regime and
+              the new tax regime for FY 2024-25, factoring in your gross salary, HRA exemption, Section
+              80C investments, home loan interest deduction, health insurance premiums, and NPS
+              contributions. The result is an instant side-by-side comparison showing which regime puts
+              more money in your pocket — along with the monthly in-hand salary under each option. This
+              calculation, which used to require a CA visit, now takes under two minutes on RupeeMath.
+            </p>
+            <p>
+              The home loan eligibility calculator applies the FOIR (Fixed Obligation to Income Ratio)
+              methodology used by all major Indian banks — SBI, HDFC, ICICI, Axis, and PNB — to show
+              you the exact maximum home loan amount you qualify for based on your net monthly salary and
+              existing EMI obligations. By adjusting the interest rate and tenure sliders, you can
+              instantly see how a longer repayment period or a co-applicant&apos;s income changes your
+              eligibility. Understanding your eligibility before approaching a bank saves you from
+              rejection-related CIBIL score damage and helps you walk in with realistic expectations and
+              stronger negotiating confidence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose RupeeMath */}
+      <section className="border-t border-border bg-gray-50 px-4 py-14">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-8 text-center text-xl font-black text-gray-900">
             Why Choose <span className="text-primary">RupeeMath</span>?
@@ -228,23 +287,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="bg-navy-900 px-4 py-14">
+      {/* Popular Guides — links to landing pages not in main calculator list */}
+      <section className="bg-navy-900 px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-8 text-center text-xl font-black text-white">
-            Why <span className="text-primary">RupeeMath</span>?
+          <h2 className="mb-6 text-center text-base font-black uppercase tracking-widest text-primary">
+            Popular Guides &amp; Calculators
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: "🔒", title: "100% Private", desc: "All calculations happen in your browser. We never see your financial data." },
-              { icon: "📄", title: "PDF Reports", desc: "Download a PDF of your results to save or share with your advisor." },
-              { icon: "🇮🇳", title: "India-First", desc: "Correct FY 2024-25 tax slabs, FOIR norms, and Indian compounding standards." },
-            ].map((item) => (
-              <div key={item.title} className="rounded-2xl bg-navy-800 p-5">
-                <div className="mb-3 text-2xl">{item.icon}</div>
-                <p className="font-bold text-white">{item.title}</p>
-                <p className="mt-1 text-sm text-navy-300">{item.desc}</p>
-              </div>
+              { label: "ITR Calculator 2026", href: "/itr-calculator", desc: "Calculate income tax return amount" },
+              { label: "Home Loan Amount Eligibility", href: "/home-loan-amount-eligibility", desc: "Maximum loan amount by salary" },
+              { label: "EMI for ₹30 Lakh Home Loan", href: "/emi-30-lakh-home-loan", desc: "Monthly payment at all rates" },
+              { label: "EMI for ₹20 Lakh Home Loan", href: "/emi-20-lakh-home-loan", desc: "Monthly payment at all rates" },
+              { label: "EMI for ₹50 Lakh Home Loan", href: "/emi-50-lakh-home-loan", desc: "Monthly payment at all rates" },
+              { label: "Joint Home Loan Eligibility", href: "/joint-home-loan-eligibility", desc: "Combined income eligibility" },
+              { label: "Home Loan on ₹30,000 Salary", href: "/home-loan-for-30000-salary", desc: "Eligibility for lower income" },
+              { label: "₹5000 SIP Returns", href: "/sip-5000-per-month", desc: "10, 15, 20, 25, 30 year projections" },
+              { label: "AI Financial Advisor", href: "/ai-advisor", desc: "Can you afford that loan?" },
+            ].map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="flex items-center justify-between rounded-xl border border-navy-700 bg-navy-800 px-4 py-3 transition hover:border-primary/50 hover:bg-navy-700"
+              >
+                <div>
+                  <p className="text-sm font-semibold text-white">{guide.label}</p>
+                  <p className="text-xs text-navy-300">{guide.desc}</p>
+                </div>
+                <span className="ml-3 shrink-0 text-primary">→</span>
+              </Link>
             ))}
           </div>
         </div>
