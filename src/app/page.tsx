@@ -303,6 +303,9 @@ export default function HomePage() {
               { label: "Joint Home Loan Eligibility", href: "/joint-home-loan-eligibility", desc: "Combined income eligibility" },
               { label: "Home Loan on ₹30,000 Salary", href: "/home-loan-for-30000-salary", desc: "Eligibility for lower income" },
               { label: "₹5000 SIP Returns", href: "/sip-5000-per-month", desc: "10, 15, 20, 25, 30 year projections" },
+              { label: "SIP vs Lump Sum", href: "/sip-vs-lumpsum", desc: "Which investment strategy is better?" },
+              { label: "Monthly SIP for ₹1 Crore", href: "/monthly-sip-to-get-1-crore", desc: "How much to invest to become crorepati" },
+              { label: "SIP Calculator — 10 Years", href: "/sip-calculator-10-years", desc: "Returns at all investment amounts" },
               { label: "AI Financial Advisor", href: "/ai-advisor", desc: "Can you afford that loan?" },
             ].map((guide) => (
               <Link

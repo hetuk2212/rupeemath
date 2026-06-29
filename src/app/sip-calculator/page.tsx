@@ -59,14 +59,21 @@ export default function SIPCalculatorPage() {
       </p>
       <SIPCalculator />
       <PDFDownload title="SIP Calculator Report" />
-      <div className="mt-6 rounded-xl border border-border bg-orange-50 p-4">
-        <p className="text-sm text-gray-700">
-          <strong>Popular:</strong>{" "}
-          <a href="/sip-5000-per-month" className="font-semibold text-primary underline underline-offset-2">
-            ₹5000 SIP Returns for 10, 15, 20, 25, 30 Years →
-          </a>{" "}
-          — detailed projections with rate comparison tables.
-        </p>
+      <div className="mt-6 grid gap-3 sm:grid-cols-3">
+        {[
+          { label: "₹5000 SIP Returns", href: "/sip-5000-per-month", desc: "10, 15, 20, 25, 30 year projections" },
+          { label: "SIP vs Lump Sum", href: "/sip-vs-lumpsum", desc: "Which strategy is better?" },
+          { label: "Monthly SIP for ₹1 Crore", href: "/monthly-sip-to-get-1-crore", desc: "How much to become a crorepati" },
+        ].map((l) => (
+          <a
+            key={l.href}
+            href={l.href}
+            className="flex flex-col rounded-xl border border-orange-100 bg-orange-50 px-4 py-3 transition hover:bg-orange-100"
+          >
+            <span className="text-sm font-bold text-primary">{l.label} →</span>
+            <span className="mt-0.5 text-xs text-gray-500">{l.desc}</span>
+          </a>
+        ))}
       </div>
       <AffiliateCTA
         heading="Ready to Start Your SIP?"

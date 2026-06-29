@@ -32,6 +32,9 @@ const calcPages = [
   "/ai-advisor",
   "/itr-calculator",
   "/home-loan-amount-eligibility",
+  "/sip-vs-lumpsum",
+  "/monthly-sip-to-get-1-crore",
+  "/sip-calculator-10-years",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
