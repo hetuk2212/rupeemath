@@ -84,20 +84,6 @@ export default function HomeLoanPage() {
       {/* SEO Content Sections */}
       <div className="mt-10 space-y-6">
         <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
-          <h2 className="mb-3 text-xl font-bold text-gray-900">Home Loan Eligibility Calculator</h2>
-          <p className="text-sm leading-relaxed text-gray-600">
-            The RupeeMath home loan eligibility calculator is a free, instant tool that shows the
-            maximum home loan amount you qualify for — based on your net monthly salary, existing EMI
-            obligations, expected interest rate, and preferred loan tenure. It uses the same FOIR
-            (Fixed Obligation to Income Ratio) methodology applied by SBI, HDFC, ICICI, and all major
-            Indian banks, giving you a reliable estimate before you approach any lender. No signup,
-            no documents, and no impact on your CIBIL score — just enter your numbers and see your
-            eligibility instantly. Results can be downloaded as a PDF report for reference during your
-            bank visits.
-          </p>
-        </section>
-
-        <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
           <h2 className="mb-3 text-xl font-bold text-gray-900">What is Home Loan Eligibility?</h2>
           <p className="text-sm leading-relaxed text-gray-600">
             Home loan eligibility is the maximum loan amount a bank or NBFC is willing to lend you
@@ -147,46 +133,35 @@ export default function HomeLoanPage() {
         </section>
 
         <section className="rounded-xl border border-border bg-gray-50 p-6">
-          <h2 className="mb-3 text-xl font-bold text-gray-900">Check Home Loan Eligibility Based on Salary</h2>
-          <p className="mb-4 text-sm text-gray-500">
-            Maximum loan amount at 8.5% interest, 50% FOIR, zero existing EMIs — across three common tenures
-          </p>
-          <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
-            <table className="w-full text-sm">
+          <h2 className="mb-3 text-xl font-bold text-gray-900">Check Home Loan Eligibility by Salary</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-gray-600">
               <thead>
-                <tr className="border-b border-border bg-navy-900 text-white">
-                  <th className="px-4 py-3 text-left font-semibold">Monthly Salary</th>
-                  <th className="px-4 py-3 text-right font-semibold">Max Loan (20 yr)</th>
-                  <th className="px-4 py-3 text-right font-semibold">Max Loan (25 yr)</th>
-                  <th className="px-4 py-3 text-right font-semibold">Max Loan (30 yr)</th>
+                <tr className="border-b border-border">
+                  <th className="py-2 text-left font-semibold text-gray-700">Monthly Salary</th>
+                  <th className="py-2 text-left font-semibold text-gray-700">Max EMI (50% FOIR)</th>
+                  <th className="py-2 text-left font-semibold text-gray-700">Approx. Loan Amount</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border bg-white">
+              <tbody className="divide-y divide-border">
                 {[
-                  { salary: "₹20,000", y20: "~₹10.6L", y25: "~₹12.4L", y30: "~₹13.3L" },
-                  { salary: "₹30,000", y20: "~₹15.9L", y25: "~₹18.6L", y30: "~₹19.9L" },
-                  { salary: "₹40,000", y20: "~₹21.1L", y25: "~₹24.8L", y30: "~₹26.6L" },
-                  { salary: "₹50,000", y20: "~₹26.4L", y25: "~₹31.0L", y30: "~₹33.2L" },
-                  { salary: "₹60,000", y20: "~₹31.7L", y25: "~₹37.2L", y30: "~₹39.8L" },
-                  { salary: "₹75,000", y20: "~₹39.6L", y25: "~₹46.5L", y30: "~₹49.8L" },
-                  { salary: "₹1,00,000", y20: "~₹52.8L", y25: "~₹62.0L", y30: "~₹66.4L" },
-                  { salary: "₹1,50,000", y20: "~₹79.3L", y25: "~₹93.0L", y30: "~₹99.6L" },
-                  { salary: "₹2,00,000", y20: "~₹1.06 Cr", y25: "~₹1.24 Cr", y30: "~₹1.33 Cr" },
-                ].map((row, i) => (
-                  <tr key={row.salary} className={i % 2 === 1 ? "bg-gray-50" : ""}>
-                    <td className="px-4 py-2.5 font-semibold text-gray-800">{row.salary}</td>
-                    <td className="px-4 py-2.5 text-right font-bold text-primary">{row.y20}</td>
-                    <td className="px-4 py-2.5 text-right text-gray-700">{row.y25}</td>
-                    <td className="px-4 py-2.5 text-right text-gray-700">{row.y30}</td>
+                  { salary: "₹30,000", emi: "₹15,000", loan: "~₹16 lakh" },
+                  { salary: "₹50,000", emi: "₹25,000", loan: "~₹26 lakh" },
+                  { salary: "₹75,000", emi: "₹37,500", loan: "~₹40 lakh" },
+                  { salary: "₹1,00,000", emi: "₹50,000", loan: "~₹53 lakh" },
+                  { salary: "₹1,50,000", emi: "₹75,000", loan: "~₹80 lakh" },
+                  { salary: "₹2,00,000", emi: "₹1,00,000", loan: "~₹1.06 crore" },
+                ].map((row) => (
+                  <tr key={row.salary}>
+                    <td className="py-2 font-medium text-gray-800">{row.salary}</td>
+                    <td className="py-2">{row.emi}</td>
+                    <td className="py-2 font-semibold text-primary">{row.loan}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs text-gray-400">
-            At 8.5% p.a., 50% FOIR, zero existing EMIs. Actual eligibility varies by lender,
-            CIBIL score, employment type, and property value.
-          </p>
+          <p className="mt-3 text-xs text-gray-400">Estimates based on 8.5% interest rate, 20-year tenure, no existing EMIs. Actual eligibility varies by bank and credit profile.</p>
         </section>
 
         <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
@@ -362,7 +337,7 @@ export default function HomeLoanPage() {
         </section>
 
         <section className="rounded-xl border border-border bg-gray-50 p-6">
-          <h2 className="mb-3 text-xl font-bold text-gray-900">Maximum Home Loan Amount by Salary in India</h2>
+          <h2 className="mb-3 text-xl font-bold text-gray-900">Home Loan Amount Eligibility by Salary</h2>
           <p className="mb-4 text-sm leading-relaxed text-gray-600">
             As a quick reference, here is the approximate home loan amount you qualify for at different salary levels — assuming 8.5% interest, 20-year tenure, and no existing EMIs (50% FOIR):
           </p>
